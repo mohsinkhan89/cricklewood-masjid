@@ -3435,3 +3435,21 @@ input {
     opacity: 0.24;
   }
 }
+
+/* Unified button font size */
+.gold-btn,
+.outline-btn,
+.donate-pill,
+.footer-btn,
+.amount-grid button,
+.newsletter-box button,
+.calendar-btn,
+.back-to-top {
+  font-size: 14px !important;
+}
+
+.gold-btn.small,
+.footer-btn span:not(.footer-btn-icon),
+.site-footer .footer-btn span:not(.footer-btn-icon) {
+  font-size: 14px !important;
+}

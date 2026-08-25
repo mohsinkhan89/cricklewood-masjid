@@ -15,3 +15,6 @@ references prompt 005:
 
 references prompt 006:  
     Add new shape image 01.png to assets/img/shape directory
+
+references prompt 007:  
+    Add unified button font size and new footer shape image
