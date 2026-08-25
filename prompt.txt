@@ -6,3 +6,6 @@ references prompt 002:
 
 references prompt 003:
     Update .visit styles in style.css for improved layout and responsiveness
+
+references prompt 004:
+    update footer buttons and styles for improved accessibility and design
