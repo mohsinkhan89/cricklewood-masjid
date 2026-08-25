@@ -18,3 +18,6 @@ references prompt 006:
 
 references prompt 007:  
     Add unified button font size and new footer shape image
+
+references prompt 008:  
+    update footer content and styling for improved visibility and design
