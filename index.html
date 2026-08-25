@@ -13,7 +13,7 @@
   <body>
     <header class="site-header">
       <div class="topbar container-custom">
-        <a class="brand" href="#">
+        <a class="brand" href="#home">
           <span class="brand-mark" aria-hidden="true"></span>
           <span>
             <strong>Cricklewood Masjid</strong>
@@ -25,7 +25,7 @@
           <div>
             <small><i class="fa-regular fa-clock"></i> Next Prayer</small>
             <strong>Dhuhr 1:14 PM</strong>
-            <a href="#">View Calendar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a href="#events">View Calendar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
           <div class="date-box">
             <small>Wednesday</small>
@@ -40,10 +40,10 @@
             <span><small>Call Us</small><strong>020 7650 3000</strong></span>
           </a>
           <div class="socials" aria-label="Social links">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#contact" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#contact" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#contact" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#contact" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -54,88 +54,50 @@
             <span></span><span></span><span></span>
           </button>
           <ul id="main-menu" class="main-menu">
-            <li><a class="active" href="#">Home</a></li>
-            <li class="has-dropdown">
-              <a href="#">About Us <i class="fa-solid fa-chevron-down"></i></a>
-              <div class="dropdown-menu">
-                <a href="#"><span>Our Story</span><small>Who we are</small></a>
-                <a href="#"><span>Our Team</span><small>Trustees & staff</small></a>
-                <a href="#"><span>Facilities</span><small>Spaces and access</small></a>
-              </div>
-            </li>
-            <li class="has-dropdown">
-              <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
-              <div class="dropdown-menu">
-                <a href="#"><span>Prayer Times</span><small>Daily salah schedule</small></a>
-                <a href="#"><span>Counselling</span><small>Family support</small></a>
-                <a href="#"><span>Venue Hire</span><small>Rooms and events</small></a>
-              </div>
-            </li>
-            <li><a href="#">Events</a></li>
-            <li class="has-dropdown">
-              <a href="#">Learning <i class="fa-solid fa-chevron-down"></i></a>
-              <div class="dropdown-menu">
-                <a href="#"><span>Classes</span><small>Adults and youth</small></a>
-                <a href="#"><span>Sunday School</span><small>Children's learning</small></a>
-                <a href="#"><span>Workshops</span><small>Short courses</small></a>
-              </div>
-            </li>
-            <li><a href="#">Get Involved</a></li>
-            <li class="has-dropdown">
-              <a href="#">Media <i class="fa-solid fa-chevron-down"></i></a>
-              <div class="dropdown-menu">
-                <a href="#"><span>News</span><small>Latest updates</small></a>
-                <a href="#"><span>Gallery</span><small>Community moments</small></a>
-                <a href="#"><span>Videos</span><small>Talks and reminders</small></a>
-              </div>
-            </li>
-            <li><a href="#">Contact</a></li>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#support">Donate</a></li>
+            <li><a href="#visit">Visit</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
-          <a class="donate-pill btn-modern" href="#"><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon><span>Donate</span></a>
+          <a class="donate-pill btn-modern" href="#support"><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon><span>Donate</span></a>
         </div>
       </nav>
     </header>
 
     <main>
-      <section class="hero" aria-label="Featured welcome">
+      <section id="home" class="hero" aria-label="Featured welcome">
         <button class="slider-btn prev" type="button" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
         <div class="hero-track">
           <article class="hero-slide active">
-            <img class="hero-bg" src="assets/img/banners/slider-01.png" alt="Mosque banner" />
+            <img class="hero-bg" src="assets/img/banners/slider-01.jpg" alt="Mosque banner" />
             <div class="hero-left">
               <h1>A Beacon of Faith, <span>Knowledge & Community</span></h1>
               <p>Serving the community since 1985</p>
-              <a class="gold-btn btn-modern" href="#"><span>Learn More</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
+              <a class="gold-btn btn-modern" href="#news"><span>Learn More</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
             </div>
           </article>
 
           <!-- <article class="hero-slide">
-            <img class="hero-bg" src="assets/img/banners/slider-02-old.jpg" alt="Prayer and community banner" />
-            <div class="hero-left">
-              <h1>A Welcoming Space <span>for Everyone</span></h1>
-              <p>Whether you are here to pray, learn, or connect, you will find a place that feels like home.</p>
-              <a class="gold-btn btn-modern" href="#"><span>Plan Your Visit</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
-            </div>
-          </article> -->
-
-          <article class="hero-slide">
             <img class="hero-bg" src="assets/img/banners/slider-03.jpg" alt="Learning and service banner" />
             <div class="hero-left">
               <h1>Learn, Worship <span>& Serve Together</span></h1>
               <p>Courses, youth activities and community support for every age and stage.</p>
-              <a class="gold-btn btn-modern" href="#"><span>Explore Services</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
+              <a class="gold-btn btn-modern" href="#services"><span>Explore Services</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
             </div>
-          </article>
+          </article> -->
         </div>
         <button class="slider-btn next" type="button" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
         <div class="slider-dots" aria-label="Hero slide controls"></div>
       </section>
 
-      <section class="news-events container-custom">
+      <section id="news" class="news-events container-custom">
         <div class="latest">
           <div class="section-title">
             <h2>Latest News & Features</h2>
-            <a href="#">View All News <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#news">View All News <i class="fa-solid fa-arrow-right"></i></a>
           </div>
           <article class="feature-card">
             <img src="assets/img/news/happy-islamic-img.png" alt="Lanterns and crescent moon" />
@@ -181,10 +143,10 @@
           </div>
         </div>
 
-        <aside class="events">
+        <aside id="events" class="events">
           <div class="section-title">
             <h2>Upcoming Events</h2>
-            <a href="#">View All Events <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#events">View All Events <i class="fa-solid fa-arrow-right"></i></a>
           </div>
           <div class="event-list">
             <article class="event-item">
@@ -208,30 +170,31 @@
               <div><h3>Islamic Finance Workshop</h3><p><i class="fa-regular fa-clock"></i> 7:00 PM - 9:00 PM</p><p><i class="fa-solid fa-location-dot"></i> Conference Room</p></div>
             </article>
           </div>
-          <a class="gold-btn calendar-btn btn-modern" href="#"><span>Full Calendar</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/wlpxtupd.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
+          <a class="gold-btn calendar-btn btn-modern" href="#events"><span>Full Calendar</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/wlpxtupd.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
         </aside>
       </section>
 
-      <section class="services container-custom">
+      <section id="services" class="services container-custom">
         <h2>Our Services</h2>
         <div class="service-grid">
-          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/wlpxtupd.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Prayer Times</h3><p>Accurate prayer times for your location.</p><a href="#">View Times <i class="fa-solid fa-arrow-right"></i></a></article>
-          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/imamsnbq.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Counselling</h3><p>Confidential support for individuals & families.</p><a href="#">Learn More <i class="fa-solid fa-arrow-right"></i></a></article>
-          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Learning</h3><p>Courses & classes for all ages.</p><a href="#">Explore <i class="fa-solid fa-arrow-right"></i></a></article>
-          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Venue Hire</h3><p>Modern spaces for events & meetings.</p><a href="#">Learn More <i class="fa-solid fa-arrow-right"></i></a></article>
-          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Community Care</h3><p>Helping those in need in our community.</p><a href="#">Get Help <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/wlpxtupd.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Prayer Times</h3><p>Accurate prayer times for your location.</p><a href="#events">View Times <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/imamsnbq.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Counselling</h3><p>Confidential support for individuals & families.</p><a href="#services">Learn More <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Learning</h3><p>Courses & classes for all ages.</p><a href="#services">Explore <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Venue Hire</h3><p>Modern spaces for events & meetings.</p><a href="#services">Learn More <i class="fa-solid fa-arrow-right"></i></a></article>
+          <article><lord-icon class="lord-service-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#d79d25,secondary:#b97a09"></lord-icon><h3>Community Care</h3><p>Helping those in need in our community.</p><a href="#contact">Get Help <i class="fa-solid fa-arrow-right"></i></a></article>
         </div>
       </section>
 
-      <section class="support-connect container-custom">
+      <section id="support" class="support-connect container-custom">
         <div class="donation-box">
+          <img class="donation-shape-img" src="assets/img/shape/01.png" alt="" aria-hidden="true" />
           <h2><i class="fa-solid fa-hand-holding-heart"></i> Support Our Work</h2>
           <p>Your generous contributions help us provide essential services, education, and support to thousands in our community.</p>
           <div class="amount-grid">
             <button>&pound;30</button><button>&pound;50</button><button>&pound;100</button><button>&pound;250</button>
             <input type="text" placeholder="Other" aria-label="Other amount" />
           </div>
-          <a class="outline-btn btn-modern" href="#"><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon><span>Donate Now</span></a>
+          <a class="outline-btn btn-modern" href="#support"><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon><span>Donate Now</span></a>
         </div>
         <div class="newsletter-box">
           <h2><i class="fa-regular fa-envelope-open"></i> Stay Connected</h2>
@@ -246,60 +209,59 @@
         </div>
       </section>
 
-      <section class="visit container-custom">
+      <section id="visit" class="visit container-custom">
         <img src="assets/img/welcome-space/welcoming-space-img.png" alt="Mosque exterior near city buildings" />
         <div>
           <h2>A Welcoming Space for Everyone</h2>
           <p>Whether you're here to pray, learn, or connect, you'll find a community that feels like home.</p>
-          <a class="gold-btn small btn-modern" href="#"><span>Plan Your Visit</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
+          <a class="gold-btn small btn-modern" href="#visit"><span>Plan Your Visit</span><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon></a>
         </div>
       </section>
 
-      <section class="quick-panels container-custom" aria-label="Quick links">
-        <a href="#"><img class="quick-panel-bg" src="assets/img/welcome-space/our-school-img.png" alt="Our schools" /><lord-icon class="panel-lord-icon" src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#ffffff,secondary:#d79d25"></lord-icon><span>Our Schools</span></a>
-        <a href="#"><img class="quick-panel-bg" src="assets/img/welcome-space/counselling-img.png" alt="Counselling" /><lord-icon class="panel-lord-icon" src="https://cdn.lordicon.com/imamsnbq.json" trigger="hover" colors="primary:#ffffff,secondary:#d79d25"></lord-icon><span>Counselling</span></a>
-        <a href="#"><img class="quick-panel-bg" src="assets/img/welcome-space/hire-facilities-img.png" alt="Hire our facilities" /><lord-icon class="panel-lord-icon" src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#ffffff,secondary:#d79d25"></lord-icon><span>Hire Our Facilities</span></a>
-        <a href="#"><img class="quick-panel-bg" src="assets/img/welcome-space/support-muslims-img.png" alt="Support new Muslims" /><lord-icon class="panel-lord-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#ffffff,secondary:#d79d25"></lord-icon><span>Support New Muslims</span></a>
+      <section id="community" class="quick-panels container-custom" aria-label="Quick links">
+        <a href="#services"><img class="quick-panel-bg" src="assets/img/welcome-space/our-school-img.png" alt="Our schools" /><lord-icon class="panel-lord-icon" src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#ffffff,secondary:#d79d25"></lord-icon><span>Our Schools</span></a>
+        <a href="#services"><img class="quick-panel-bg" src="assets/img/welcome-space/counselling-img.png" alt="Counselling" /><lord-icon class="panel-lord-icon" src="https://cdn.lordicon.com/imamsnbq.json" trigger="hover" colors="primary:#ffffff,secondary:#d79d25"></lord-icon><span>Counselling</span></a>
+        <a href="#visit"><img class="quick-panel-bg" src="assets/img/welcome-space/hire-facilities-img.png" alt="Hire our facilities" /><lord-icon class="panel-lord-icon" src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#ffffff,secondary:#d79d25"></lord-icon><span>Hire Our Facilities</span></a>
+        <a href="#support"><img class="quick-panel-bg" src="assets/img/welcome-space/support-muslims-img.png" alt="Support new Muslims" /><lord-icon class="panel-lord-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#ffffff,secondary:#d79d25"></lord-icon><span>Support New Muslims</span></a>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer id="contact" class="site-footer">
       <div class="footer-glow" aria-hidden="true"></div>
       <div class="container-custom footer-modern">
         <div class="footer-about">
-          <a class="brand footer-brand" href="#">
+          <a class="brand footer-brand" href="#home">
             <span class="brand-mark" aria-hidden="true"></span>
             <span><strong>Cricklewood Masjid</strong><small>& Islamic Centre</small></span>
           </a>
           <p>A welcoming centre for worship, learning, care and community connection in the heart of London.</p>
           <div class="footer-actions">
-            <a class="footer-btn btn-modern" href="#"><span class="footer-btn-icon"><i class="fa-regular fa-heart"></i></span><span>Donate</span></a>
-            <a class="footer-btn footer-btn-light btn-modern" href="#"><span class="footer-btn-icon"><i class="fa-solid fa-location-dot"></i></span><span>Visit Us</span></a>
+            <a class="footer-btn btn-modern" href="#support"><span class="footer-btn-icon"><i class="fa-regular fa-heart"></i></span><span>Donate</span></a>
+            <a class="footer-btn footer-btn-light btn-modern" href="#visit"><span class="footer-btn-icon"><i class="fa-solid fa-location-dot"></i></span><span>Visit Us</span></a>
           </div>
           <div class="socials footer-socials">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#contact" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#contact" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#contact" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#contact" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
 
         <nav class="footer-links" aria-label="Footer quick links">
           <h3>Quick Links</h3>
-          <a href="#">About Us</a>
-          <a href="#">Our Services</a>
-          <a href="#">Events</a>
-          <a href="#">Learning</a>
-          <a href="#">Contact Us</a>
+          <a href="#home">Home</a>
+          <a href="#news">News</a>
+          <a href="#events">Events</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact Us</a>
         </nav>
 
         <nav class="footer-links" aria-label="Footer support links">
           <h3>Support</h3>
-          <a href="#">Donate</a>
-          <a href="#">Make a Difference</a>
-          <a href="#">Volunteer</a>
-          <a href="#">Venue Hire</a>
-          <a href="#">FAQs</a>
+          <a href="#support">Donate</a>
+          <a href="#support">Newsletter</a>
+          <a href="#visit">Plan Your Visit</a>
+          <a href="#community">Community Links</a>
         </nav>
 
         <div class="footer-contact-card">
@@ -315,10 +277,17 @@
       </div>
     </footer>
 
+    <button class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
+
+
+
+
+
 
 
 

@@ -12,3 +12,6 @@ references prompt 004:
 
 references prompt 005:  
     update hero-left h1 max-width and position for better layout
+
+references prompt 006:  
+    Add new shape image 01.png to assets/img/shape directory

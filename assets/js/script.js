@@ -137,3 +137,62 @@ function enableParentLordIconHover() {
 }
 
 enableParentLordIconHover();
+
+const header = document.querySelector(".site-header");
+const backToTop = document.querySelector(".back-to-top");
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+const navLinks = Array.from(document.querySelectorAll(".main-menu a[href^='#']"));
+const sectionIds = ["home", "news", "events", "services", "support", "visit", "contact"];
+const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+
+function getHeaderOffset() {
+  return (header?.offsetHeight || 0) + 12;
+}
+
+function scrollToSection(target) {
+  const top = target.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
+anchorLinks.forEach((link) => {
+  const href = link.getAttribute("href");
+  if (!href || href === "#" || href.length < 2) return;
+
+  const target = document.querySelector(href);
+  if (!target) return;
+
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    scrollToSection(target);
+
+    if (mainMenu?.classList.contains("open")) {
+      mainMenu.classList.remove("open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+    }
+  });
+});
+
+function updateActiveNav() {
+  const offset = getHeaderOffset() + 80;
+  let activeId = sections[0]?.id;
+
+  sections.forEach((section) => {
+    if (section.offsetTop <= window.scrollY + offset) {
+      activeId = section.id;
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
+  });
+
+  backToTop?.classList.toggle("show", window.scrollY > 520);
+}
+
+backToTop?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+window.addEventListener("resize", updateActiveNav);
+updateActiveNav();

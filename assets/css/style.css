@@ -2104,8 +2104,6 @@ time {
   max-width: 510px !important;
   padding-left: 0;
   text-align: left;
-  position: absolute;
-  left: -130px;
 }
 
 .hero-left h1 {
@@ -3304,4 +3302,136 @@ input {
   background: transparent !important;
   border-color: var(--gold) !important;
   box-shadow: 0 8px 18px rgba(215, 157, 37, 0.18) !important;
+}
+
+/* Section anchors and back-to-top */
+#home,
+#news,
+#events,
+#services,
+#support,
+#visit,
+#community,
+#contact {
+  scroll-margin-top: 168px;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  box-shadow: 0 14px 28px rgba(120, 74, 4, 0.24);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(120, 74, 4, 0.3);
+}
+
+@media (max-width: 640px) {
+  #home,
+  #news,
+  #events,
+  #services,
+  #support,
+  #visit,
+  #community,
+  #contact {
+    scroll-margin-top: 128px;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Card pointer cursor and donation shape background */
+.feature-card,
+.news-card,
+.event-item,
+.services article,
+.donation-box,
+.newsletter-box,
+.visit,
+.quick-panels a,
+.footer-contact-card {
+  cursor: pointer;
+}
+
+.donation-box {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(221, 168, 54, 0.94), rgba(186, 119, 12, 0.96)),
+    url("../img/shape/01.png") right -18px bottom -28px / 240px no-repeat !important;
+}
+
+.donation-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 100%);
+  pointer-events: none;
+}
+
+.donation-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Reliable visible donation shape image */
+.donation-box {
+  background: linear-gradient(145deg, rgba(221, 168, 54, 0.96), rgba(186, 119, 12, 0.96)) !important;
+}
+
+.donation-shape-img {
+  position: absolute;
+  right: -20px;
+  bottom: -28px;
+  z-index: 0;
+  width: 260px;
+  max-width: 58%;
+  height: auto;
+  opacity: 0.34;
+  pointer-events: none;
+  filter: brightness(0) invert(1);
+}
+
+.donation-box::after {
+  z-index: 0;
+}
+
+.donation-box > :not(.donation-shape-img) {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .donation-shape-img {
+    width: 210px;
+    opacity: 0.24;
+  }
 }
