@@ -3,3 +3,6 @@ references prompt 001:
 
 references prompt 002:
     Add styles for upcoming events and call pulse animation
+
+references prompt 003:
+    Update .visit styles in style.css for improved layout and responsiveness
