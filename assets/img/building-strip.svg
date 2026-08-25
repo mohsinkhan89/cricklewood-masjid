@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260">
+  <defs>
+    <linearGradient id="city" x1="0" x2="1">
+      <stop stop-color="#17364a"/>
+      <stop offset=".5" stop-color="#b35e33"/>
+      <stop offset="1" stop-color="#f3d38c"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="260" fill="url(#city)"/>
+  <g opacity=".45" stroke="#fff" stroke-width="2">
+    <path d="M15 42h180v218H15ZM42 42v218M70 42v218M98 42v218M126 42v218M154 42v218M15 74h180M15 108h180M15 142h180M15 176h180"/>
+    <path d="M640 12h210v248H640ZM670 12v248M700 12v248M730 12v248M760 12v248M790 12v248M820 12v248M640 48h210M640 84h210M640 120h210M640 156h210"/>
+  </g>
+  <g>
+    <rect x="274" y="83" width="260" height="177" fill="#aa572e"/>
+    <path d="M274 83 410 32 534 83Z" fill="#ca8a4d"/>
+    <rect x="330" y="146" width="64" height="114" fill="#37281e"/>
+    <rect x="428" y="132" width="58" height="48" fill="#203d4b"/>
+    <path d="M404 72c-22 18-36 35-36 70h72c0-35-14-52-36-70Z" fill="#d8a241"/>
+  </g>
+  <path d="M0 212c145-52 224-19 350-15 174 5 275-44 550-10v73H0Z" fill="#182421" opacity=".5"/>
+</svg>

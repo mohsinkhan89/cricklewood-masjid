@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#dce5ec"/>
+      <stop offset="1" stop-color="#f5f0e7"/>
+    </linearGradient>
+    <linearGradient id="brick" x1="0" x2="1">
+      <stop stop-color="#9d552b"/>
+      <stop offset="1" stop-color="#c68142"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="620" fill="url(#sky)"/>
+  <path d="M0 432c144-44 248-31 391-1 181 39 327 7 466-50 142-59 255-64 343-29v268H0Z" fill="#d2b98b" opacity=".35"/>
+  <g transform="translate(0 14)">
+    <polygon points="520,84 925,13 1108,606 423,606" fill="url(#brick)"/>
+    <polygon points="548,129 914,62 923,97 539,166" fill="#7b3b20" opacity=".55"/>
+    <g stroke="#74381e" stroke-width="3" opacity=".42">
+      <path d="M530 186h494M513 238h527M496 290h560M479 342h594M462 394h627M445 446h661M429 498h692M412 550h727"/>
+      <path d="M571 121v485M632 110v496M693 99v507M754 88v518M815 77v529M876 66v540M937 85v521M998 145v461M1059 213v393"/>
+    </g>
+    <g fill="#1f2c31">
+      <polygon points="672,180 753,165 769,606 646,606"/>
+      <polygon points="834,149 908,136 940,606 819,606"/>
+    </g>
+    <g fill="#d8a448">
+      <polygon points="690,204 736,196 744,360 680,370"/>
+      <polygon points="850,173 894,165 906,336 840,345"/>
+    </g>
+    <g transform="translate(220 35)">
+      <rect x="35" y="210" width="88" height="356" fill="#a95f31"/>
+      <g stroke="#74381e" stroke-width="2" opacity=".5">
+        <path d="M35 252h88M35 296h88M35 340h88M35 384h88M35 428h88M35 472h88M35 516h88"/>
+      </g>
+      <path d="M27 210h104l-12-62H39Z" fill="#dec78e"/>
+      <path d="M44 147c0-53 70-53 70 0v64H44Z" fill="#e7d6aa"/>
+      <path d="M58 158c0-30 42-30 42 0v53H58Z" fill="#253238"/>
+      <rect x="28" y="210" width="102" height="12" fill="#734322"/>
+      <path d="M79 41 86 113H72Z" fill="#5c482a"/>
+      <path d="M72 83c-14 14-27 26-27 55h68c0-29-13-41-27-55Z" fill="#d8a448"/>
+    </g>
+    <g transform="translate(124 206) scale(.72)">
+      <rect x="35" y="210" width="88" height="356" fill="#a95f31"/>
+      <path d="M27 210h104l-12-62H39Z" fill="#dec78e"/>
+      <path d="M44 147c0-53 70-53 70 0v64H44Z" fill="#e7d6aa"/>
+      <path d="M58 158c0-30 42-30 42 0v53H58Z" fill="#253238"/>
+      <rect x="28" y="210" width="102" height="12" fill="#734322"/>
+      <path d="M79 41 86 113H72Z" fill="#5c482a"/>
+      <path d="M72 83c-14 14-27 26-27 55h68c0-29-13-41-27-55Z" fill="#d8a448"/>
+    </g>
+  </g>
+</svg>
