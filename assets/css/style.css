@@ -2104,10 +2104,12 @@ time {
   max-width: 510px !important;
   padding-left: 0;
   text-align: left;
+  position: absolute;
+  left: -130px;
 }
 
 .hero-left h1 {
-  max-width: 460px;
+  max-width: 650px;
   margin-bottom: 18px;
   color: #090b0f;
   text-shadow: 0 2px 14px rgba(255, 255, 255, 0.36);

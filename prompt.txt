@@ -9,3 +9,6 @@ references prompt 003:
 
 references prompt 004:
     update footer buttons and styles for improved accessibility and design
+
+references prompt 005:  
+    update hero-left h1 max-width and position for better layout
