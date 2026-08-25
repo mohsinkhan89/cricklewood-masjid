@@ -1,2 +1,5 @@
 references prompt 001:
     Enhance UI with modern header design and dropdown menus; add font styles
+
+references prompt 002:
+    Add styles for upcoming events and call pulse animation

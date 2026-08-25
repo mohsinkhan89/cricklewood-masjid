@@ -2923,3 +2923,210 @@ input {
     justify-content: start !important;
   }
 }
+
+/* Modern upcoming events and call pulse */
+.events {
+  position: relative;
+  padding: 28px 30px 30px !important;
+  border-left: 0 !important;
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 248, 237, 0.86)),
+    url("../img/pattern.svg") right -80px top -80px / 280px no-repeat;
+  box-shadow: 0 16px 42px rgba(24, 21, 15, 0.1);
+  border: 1px solid rgba(215, 157, 37, 0.14);
+}
+
+.events::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 4px;
+  border-radius: 0 99px 99px 0;
+  background: linear-gradient(180deg, #dba63a, #bd7e12);
+}
+
+.events .section-title {
+  margin-bottom: 16px;
+}
+
+.events .section-title h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.events .section-title h2::before {
+  content: "\f073";
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 10px 18px rgba(189, 126, 18, 0.2);
+}
+
+.event-list {
+  gap: 12px;
+}
+
+.event-item {
+  position: relative;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  padding: 14px;
+  border: 1px solid rgba(215, 157, 37, 0.12) !important;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 7px 18px rgba(24, 21, 15, 0.05);
+}
+
+.event-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(215, 157, 37, 0.11), transparent 48%);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+}
+
+.event-item:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(215, 157, 37, 0.36) !important;
+  box-shadow: 0 15px 30px rgba(24, 21, 15, 0.12);
+}
+
+.event-item:hover::after {
+  opacity: 1;
+}
+
+.event-item time {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 10px 18px rgba(183, 122, 9, 0.14);
+}
+
+.event-item time span {
+  padding: 6px 0;
+  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  font-weight: 900;
+}
+
+.event-item time strong {
+  padding-top: 10px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.event-item time small {
+  padding-bottom: 10px;
+  color: #6e6252;
+  font-weight: 850;
+}
+
+.event-item div {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.event-item h3 {
+  margin-bottom: 10px;
+  color: #141414;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.event-item p {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 8px 6px 0;
+  padding: 6px 9px !important;
+  border-radius: 8px;
+  color: #655b50;
+  background: rgba(245, 238, 226, 0.86);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.event-item p i {
+  width: auto !important;
+  color: #b6780f;
+  font-size: 12px;
+}
+
+.calendar-btn {
+  width: fit-content;
+  margin-top: 18px;
+}
+
+.call i {
+  position: relative;
+  animation: callPulseRing 1.9s ease-out infinite !important;
+}
+
+.call i::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 2px solid rgba(215, 157, 37, 0.42);
+  animation: callPulseOuter 1.9s ease-out infinite;
+}
+
+@keyframes callPulseRing {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(215, 157, 37, 0.42);
+  }
+  55% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 10px rgba(215, 157, 37, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(215, 157, 37, 0);
+  }
+}
+
+@keyframes callPulseOuter {
+  0% {
+    opacity: 0.75;
+    transform: scale(0.82);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@media (max-width: 980px) {
+  .events {
+    padding: 24px 18px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .event-item {
+    grid-template-columns: 58px 1fr;
+    padding: 12px;
+  }
+
+  .event-item p {
+    display: flex;
+    width: fit-content;
+  }
+}
