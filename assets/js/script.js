@@ -52,9 +52,9 @@ const PRAYER_COLUMNS = ["fajrBegins", "fajrJamah", "sunrise", "zuhrBegins", "zuh
 const PRAYER_DISPLAY = [
   { key: "fajr", label: "Fajr", begins: "fajrBegins", jamah: "fajrJamah" },
   { key: "zuhr", label: "Zuhr", begins: "zuhrBegins", jamah: "zuhrJamah" },
-  { key: "asr", label: "'Asr", begins: "asrBegins", jamah: "asrJamah" },
+  { key: "asr", label: "Asr", begins: "asrBegins", jamah: "asrJamah" },
   { key: "maghrib", label: "Maghrib", begins: "maghribBegins", jamah: "maghribJamah" },
-  { key: "isha", label: "'Isha", begins: "ishaBegins", jamah: "ishaJamah" }
+  { key: "isha", label: "Isha", begins: "ishaBegins", jamah: "ishaJamah" }
 ];
 const LONDON_TIME_ZONE = "Europe/London";
 function showSlide(index) {
