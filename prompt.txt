@@ -21,3 +21,6 @@ references prompt 007:
 
 references prompt 008:  
     update footer content and styling for improved visibility and design
+
+references prompt 009:  
+    Add contact section with form and details in index.html; update styles in style.css and script.js

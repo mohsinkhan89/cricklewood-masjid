@@ -63,7 +63,7 @@ document.querySelectorAll(".amount-grid button").forEach((button) => {
 });
 
 const revealTargets = document.querySelectorAll(
-  ".section-title, .feature-card, .news-card, .event-item, .services article, .donation-box, .newsletter-box, .visit, .quick-panels a, .footer-modern > *, .footer-bottom"
+  ".section-title, .feature-card, .news-card, .event-item, .services article, .donation-box, .newsletter-box, .visit, .quick-panels a, .contact-copy, .contact-detail-list a, .contact-form, .footer-modern > *, .footer-bottom"
 );
 
 revealTargets.forEach((element, index) => {
@@ -196,3 +196,4 @@ backToTop?.addEventListener("click", () => {
 window.addEventListener("scroll", updateActiveNav, { passive: true });
 window.addEventListener("resize", updateActiveNav);
 updateActiveNav();
+
