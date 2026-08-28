@@ -78,3 +78,6 @@ references prompt 026:
 
 references prompt 027:
     update mobile styles for improved accessibility and layout
+
+references prompt 028:
+    update contact information in index.html
