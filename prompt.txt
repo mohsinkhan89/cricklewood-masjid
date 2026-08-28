@@ -45,3 +45,6 @@ references prompt 015:
 
 references prompt 016:    
     refine prayer timing widget styles for improved layout and readability
+
+references prompt 017:    
+    enhance prayer timetable widget with detailed formatting and improved layout

@@ -4442,72 +4442,149 @@ input {
     grid-template-columns: 66px 1fr auto;
   }
 }
-/* Compact prayer timing widget polish */
+/* Detailed prayer timetable widget */
 .topbar {
-  min-height: 70px !important;
-  grid-template-columns: minmax(235px, 0.85fr) minmax(520px, 600px) minmax(350px, 0.8fr) !important;
+  min-height: 82px !important;
+  grid-template-columns: minmax(235px, 0.85fr) minmax(600px, 670px) minmax(350px, 0.8fr) !important;
   align-items: center !important;
   gap: 18px !important;
 }
 
+.prayer-times-widget {
+  border: 1px solid rgba(215, 157, 37, 0.32) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 244, 237, 0.92)) !important;
+  box-shadow: 0 14px 34px rgba(24, 21, 15, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
 .header-prayer-widget {
-  width: min(600px, 39vw) !important;
-  min-width: 520px !important;
-  padding: 5px 8px !important;
-  border-radius: 11px !important;
+  width: min(670px, 44vw) !important;
+  min-width: 600px !important;
+  padding: 7px 10px 9px !important;
+  border-radius: 14px !important;
 }
 
 .header-prayer-widget .prayer-widget-head {
-  gap: 10px !important;
-  margin-bottom: 4px !important;
+  justify-content: center !important;
+  margin-bottom: 6px !important;
 }
 
-.header-prayer-widget .prayer-widget-head small {
-  font-size: 9px !important;
-  line-height: 1 !important;
+.header-prayer-widget .prayer-widget-head small,
+.header-prayer-widget .prayer-widget-head > a {
+  display: none !important;
 }
 
 .header-prayer-widget .prayer-widget-head strong {
-  margin-top: 0 !important;
-  font-size: 11px !important;
-  line-height: 1.05 !important;
+  margin: 0 !important;
+  color: #7b7163 !important;
+  font-size: 13px !important;
+  line-height: 1.1 !important;
+  font-weight: 750 !important;
+  text-align: center;
 }
 
-.header-prayer-widget .prayer-widget-head a {
-  font-size: 9px !important;
+.header-prayer-widget .prayer-widget-head strong span {
+  margin: 0 9px;
+  color: var(--gold);
+  font-size: 15px;
+  line-height: 0;
 }
 
 .header-prayer-widget .prayer-times-list {
-  gap: 5px !important;
+  display: grid !important;
+  grid-template-columns: 124px 56px repeat(5, minmax(62px, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 6px !important;
 }
 
-.header-prayer-widget .prayer-time-item {
-  min-height: 36px !important;
-  padding: 3px 4px !important;
-  border-radius: 8px !important;
-  gap: 0 !important;
+.prayer-calendar-link {
+  display: inline-flex;
+  align-self: end;
+  align-items: center;
+  min-height: 43px;
+  padding: 7px 9px;
+  border: 1px solid rgba(215, 157, 37, 0.22);
+  border-radius: 9px;
+  color: var(--gold-dark);
+  background: rgba(255, 250, 242, 0.78);
+  font-size: 11px;
+  line-height: 1.15;
+  font-weight: 850;
 }
 
-.header-prayer-widget .prayer-time-item span {
-  font-size: 7.5px !important;
-  line-height: 1 !important;
+.prayer-row-labels {
+  display: grid;
+  grid-template-rows: 15px 15px 15px;
+  align-self: end;
+  align-items: center;
+  min-height: 43px;
+  color: #9b9286;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 750;
+  text-align: right;
 }
 
-.header-prayer-widget .prayer-time-item strong {
-  font-size: 13px !important;
-  line-height: 0.98 !important;
+.prayer-table-column {
+  position: relative;
+  display: grid;
+  grid-template-rows: 15px 15px 15px;
+  align-items: center;
+  justify-items: center;
+  min-height: 43px;
+  padding: 4px 5px;
+  border: 1px solid rgba(215, 157, 37, 0.16);
+  border-radius: 9px;
+  color: var(--ink);
+  background: rgba(255, 253, 250, 0.72);
+  text-align: center;
 }
 
-.header-prayer-widget .prayer-time-item small {
-  font-size: 7px !important;
-  line-height: 1 !important;
+.prayer-name {
+  color: #443c32;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 800;
 }
 
-.header-prayer-widget .prayer-time-item em {
-  top: 2px !important;
-  right: 3px !important;
-  padding: 1px 3px !important;
-  font-size: 6.5px !important;
+.prayer-begins,
+.prayer-jamah {
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.prayer-begins span,
+.prayer-jamah span {
+  display: none;
+}
+
+.prayer-table-column em {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  padding: 2px 5px;
+  border-radius: 999px;
+  color: var(--gold-dark);
+  background: #fff7df;
+  box-shadow: 0 0 0 1px rgba(215, 157, 37, 0.26);
+  font-size: 6.5px;
+  line-height: 1.2;
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.prayer-table-column.active {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  box-shadow: 0 10px 18px rgba(185, 122, 9, 0.18);
+}
+
+.prayer-table-column.active .prayer-name,
+.prayer-table-column.active .prayer-begins,
+.prayer-table-column.active .prayer-jamah {
+  color: #fff;
 }
 
 .contact-social {
@@ -4552,7 +4629,7 @@ input {
 
 @media (max-width: 1180px) and (min-width: 981px) {
   .topbar {
-    grid-template-columns: 1fr minmax(500px, 620px) !important;
+    grid-template-columns: 1fr minmax(540px, 670px) !important;
   }
 
   .header-prayer-widget {
@@ -4568,15 +4645,81 @@ input {
 
 @media (max-width: 980px) {
   .mobile-sidebar-info .prayer-times-widget {
-    padding: 8px !important;
+    width: 100%;
+    min-width: 0 !important;
+    padding: 10px !important;
   }
 
   .mobile-sidebar-info .prayer-widget-head {
-    margin-bottom: 8px !important;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 9px !important;
   }
 
-  .mobile-sidebar-info .prayer-time-item {
-    min-height: 46px !important;
-    padding: 8px 9px !important;
+  .mobile-sidebar-info .prayer-widget-head small,
+  .mobile-sidebar-info .prayer-widget-head > a {
+    display: flex !important;
+  }
+
+  .mobile-sidebar-info .prayer-widget-head strong {
+    color: #7b7163;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .mobile-sidebar-info .prayer-times-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+  }
+
+  .mobile-sidebar-info .prayer-calendar-link {
+    justify-content: center;
+    min-height: 38px;
+    padding: 7px 9px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .mobile-sidebar-info .prayer-row-labels {
+    display: none;
+  }
+
+  .mobile-sidebar-info .prayer-table-column {
+    grid-template-columns: 72px 1fr 1fr;
+    grid-template-rows: auto;
+    justify-items: stretch;
+    min-height: 48px;
+    padding: 8px 10px;
+    border-color: rgba(215, 157, 37, 0.18);
+    background: rgba(255, 250, 242, 0.82);
+  }
+
+  .mobile-sidebar-info .prayer-name {
+    align-self: center;
+    font-size: 12px;
+  }
+
+  .mobile-sidebar-info .prayer-begins,
+  .mobile-sidebar-info .prayer-jamah {
+    display: grid;
+    gap: 2px;
+    justify-items: end;
+    font-size: 13px;
+  }
+
+  .mobile-sidebar-info .prayer-begins span,
+  .mobile-sidebar-info .prayer-jamah span {
+    display: block;
+    color: #9c9285;
+    font-size: 8px;
+    font-weight: 850;
+    text-transform: uppercase;
+  }
+
+  .mobile-sidebar-info .prayer-table-column.active .prayer-begins span,
+  .mobile-sidebar-info .prayer-table-column.active .prayer-jamah span {
+    color: rgba(255, 255, 255, 0.76);
   }
 }

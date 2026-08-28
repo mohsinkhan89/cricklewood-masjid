@@ -51,10 +51,10 @@ const PRAYER_TIMES_MONTH = {
 const PRAYER_COLUMNS = ["fajrBegins", "fajrJamah", "sunrise", "zuhrBegins", "zuhrJamah", "asrBegins", "asrJamah", "maghribBegins", "maghribJamah", "ishaBegins", "ishaJamah"];
 const PRAYER_DISPLAY = [
   { key: "fajr", label: "Fajr", begins: "fajrBegins", jamah: "fajrJamah" },
-  { key: "zuhr", label: "Dhuhr", begins: "zuhrBegins", jamah: "zuhrJamah" },
-  { key: "asr", label: "Asr", begins: "asrBegins", jamah: "asrJamah" },
+  { key: "zuhr", label: "Zuhr", begins: "zuhrBegins", jamah: "zuhrJamah" },
+  { key: "asr", label: "'Asr", begins: "asrBegins", jamah: "asrJamah" },
   { key: "maghrib", label: "Maghrib", begins: "maghribBegins", jamah: "maghribJamah" },
-  { key: "isha", label: "Isha", begins: "ishaBegins", jamah: "ishaJamah" }
+  { key: "isha", label: "'Isha", begins: "ishaBegins", jamah: "ishaJamah" }
 ];
 const LONDON_TIME_ZONE = "Europe/London";
 function showSlide(index) {
@@ -188,14 +188,38 @@ function getLondonNowParts() {
   };
 }
 
-function formatCurrentPrayerDate(nowParts) {
+function getPrayerDate(nowParts) {
+  return new Date(Date.UTC(nowParts.year, nowParts.month, nowParts.day));
+}
+
+function formatGregorianDate(nowParts) {
   return new Intl.DateTimeFormat("en-GB", {
     timeZone: "UTC",
-    weekday: "short",
     day: "numeric",
-    month: "short",
+    month: "long",
     year: "numeric"
-  }).format(new Date(Date.UTC(nowParts.year, nowParts.month, nowParts.day)));
+  }).format(getPrayerDate(nowParts));
+}
+
+function formatHijriDate(nowParts) {
+  const date = getPrayerDate(nowParts);
+  const formatted = new Intl.DateTimeFormat("en-GB-u-ca-islamic-umalqura", {
+    timeZone: "UTC",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  }).format(date);
+
+  return formatted
+    .replace(" AH", "")
+    .replace("RabiÊ» I", "Rabi' Al-Awwal")
+    .replace("RabiÊ» II", "Rabi' Al-Thani")
+    .replace("Jumada I", "Jumada Al-Awwal")
+    .replace("Jumada II", "Jumada Al-Thani");
+}
+
+function formatPrayerDateLabel(nowParts) {
+  return `${formatGregorianDate(nowParts)} <span aria-hidden="true">&bull;</span> ${formatHijriDate(nowParts)}`;
 }
 
 function getPrayerDay(nowParts) {
@@ -220,22 +244,27 @@ function renderPrayerWidget(widget, row, dateLabel, activeKey) {
   const dateTarget = widget.querySelector("[data-prayer-date]");
   const listTarget = widget.querySelector("[data-prayer-list]");
 
-  if (dateTarget) dateTarget.textContent = dateLabel;
+  if (dateTarget) dateTarget.innerHTML = dateLabel;
   if (!listTarget) return;
 
-  listTarget.innerHTML = PRAYER_DISPLAY.map((prayer) => {
+  const prayerColumns = PRAYER_DISPLAY.map((prayer) => {
     const isActive = prayer.key === activeKey;
     return `
-      <div class="prayer-time-item${isActive ? " active" : ""}" data-prayer="${prayer.key}">
-        <span>${prayer.label}</span>
-        <strong>${getPrayerTime(row, prayer.jamah)}</strong>
-        <small>Begins ${getPrayerTime(row, prayer.begins)}</small>
+      <div class="prayer-table-column${isActive ? " active" : ""}" data-prayer="${prayer.key}">
+        <span class="prayer-name">${prayer.label}</span>
+        <strong class="prayer-begins"><span>Begins</span>${getPrayerTime(row, prayer.begins)}</strong>
+        <strong class="prayer-jamah"><span>Jama'ah</span>${getPrayerTime(row, prayer.jamah)}</strong>
         ${isActive ? "<em>Next</em>" : ""}
       </div>
     `;
   }).join("");
-}
 
+  listTarget.innerHTML = `
+    <a class="prayer-calendar-link" href="#events">Full Timetable<br>&amp; Calendar</a>
+    <div class="prayer-row-labels" aria-hidden="true"><span></span><span>Begins</span><span>Jama'ah</span></div>
+    ${prayerColumns}
+  `;
+}
 function updatePrayerWidgets() {
   const widgets = document.querySelectorAll("[data-prayer-widget]");
   if (!widgets.length) return;
@@ -246,7 +275,7 @@ function updatePrayerWidgets() {
   if (!row) return;
 
   const activeKey = getNextPrayerKey(row, nowParts.minutes, isCurrentDate);
-  const dateLabel = formatCurrentPrayerDate(nowParts);
+  const dateLabel = formatPrayerDateLabel(nowParts);
   widgets.forEach((widget) => renderPrayerWidget(widget, row, dateLabel, activeKey));
 }
 document.querySelectorAll(".amount-grid button").forEach((button) => {
