@@ -66,3 +66,6 @@ references prompt 022:
 
 references prompt 023:
     Update mobile brand display and enhance grid layout for responsiveness
+
+references prompt 024:
+    Add responsive styles for hero section on medium screens

@@ -5987,3 +5987,21 @@ input {
     flex-basis: 32px;
   }
 }
+
+@media only screen and (min-width: 1300px) and (max-width: 1550px) {
+  .hero,
+  .hero-track,
+  .hero-slide {
+    min-height: clamp(433px, 33.333vw, 517px) !important;
+    height: clamp(433px, 33.333vw, 517px) !important;
+  }
+
+  .hero-bg,
+  .hero-slide.active .hero-bg {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
+  }
+}
