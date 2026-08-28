@@ -33,3 +33,6 @@ references prompt 011:
 
 references prompt 012:  
     update styles for news card padding and service grid layout on compact screens
+
+references prompt 013:    
+    add sidebar-section-title to hidden elements in mobile view
