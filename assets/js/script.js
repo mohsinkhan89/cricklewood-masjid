@@ -1,4 +1,5 @@
 ﻿const slides = Array.from(document.querySelectorAll(".hero-slide"));
+const hero = document.querySelector(".hero");
 const dotsWrap = document.querySelector(".slider-dots");
 const prevBtn = document.querySelector(".slider-btn.prev");
 const nextBtn = document.querySelector(".slider-btn.next");
@@ -6,8 +7,10 @@ const menuToggle = document.querySelector(".menu-toggle");
 const mainMenu = document.querySelector(".mobile-menu-panel");
 const menuClose = document.querySelector(".menu-close");
 const menuBackdrop = document.querySelector(".mobile-menu-backdrop");
+const hasMultipleSlides = slides.length > 1;
 let currentSlide = 0;
 let timer;
+let lockedScrollY = 0;
 
 function showSlide(index) {
   if (!slides.length) return;
@@ -24,12 +27,21 @@ function showSlide(index) {
 }
 
 function startSlider() {
-  if (slides.length < 2) return;
+  if (!hasMultipleSlides) return;
   clearInterval(timer);
   timer = setInterval(() => showSlide(currentSlide + 1), 6000);
 }
 
-if (dotsWrap) {
+function hideSliderControls() {
+  hero?.classList.add("single-slide");
+  [prevBtn, nextBtn, dotsWrap].forEach((control) => {
+    if (!control) return;
+    control.hidden = true;
+    control.setAttribute("aria-hidden", "true");
+  });
+}
+
+if (dotsWrap && hasMultipleSlides) {
   slides.forEach((_, index) => {
     const dot = document.createElement("button");
     dot.type = "button";
@@ -40,28 +52,54 @@ if (dotsWrap) {
     });
     dotsWrap.appendChild(dot);
   });
+} else {
+  hideSliderControls();
 }
 
-prevBtn?.addEventListener("click", () => {
-  showSlide(currentSlide - 1);
-  startSlider();
-});
+if (hasMultipleSlides) {
+  prevBtn?.addEventListener("click", () => {
+    showSlide(currentSlide - 1);
+    startSlider();
+  });
 
-nextBtn?.addEventListener("click", () => {
-  showSlide(currentSlide + 1);
-  startSlider();
-});
+  nextBtn?.addEventListener("click", () => {
+    showSlide(currentSlide + 1);
+    startSlider();
+  });
+}
 
-function setMenuOpen(isOpen) {
+function lockPageScroll() {
+  lockedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  document.documentElement.classList.add("menu-open");
+  document.body.classList.add("menu-open");
+  document.body.style.top = `-${lockedScrollY}px`;
+}
+
+function unlockPageScroll({ restoreScroll = true } = {}) {
+  document.documentElement.classList.remove("menu-open");
+  document.body.classList.remove("menu-open");
+  document.body.style.top = "";
+
+  if (restoreScroll) {
+    window.scrollTo(0, lockedScrollY);
+  }
+}
+
+function setMenuOpen(isOpen, options = {}) {
   if (!mainMenu) return;
 
   mainMenu.classList.toggle("open", isOpen);
   menuToggle?.setAttribute("aria-expanded", String(isOpen));
-  document.body.classList.toggle("menu-open", isOpen);
 
   if (menuBackdrop) {
     menuBackdrop.hidden = !isOpen;
     menuBackdrop.classList.toggle("show", isOpen);
+  }
+
+  if (isOpen) {
+    lockPageScroll();
+  } else {
+    unlockPageScroll(options);
   }
 }
 
@@ -75,7 +113,6 @@ menuBackdrop?.addEventListener("click", () => setMenuOpen(false));
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenuOpen(false);
 });
-
 document.querySelectorAll(".amount-grid button").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".amount-grid button").forEach((item) => item.classList.remove("selected"));
@@ -184,11 +221,14 @@ anchorLinks.forEach((link) => {
 
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    scrollToSection(target);
 
     if (mainMenu?.classList.contains("open")) {
-      setMenuOpen(false);
+      setMenuOpen(false, { restoreScroll: false });
+      requestAnimationFrame(() => scrollToSection(target));
+      return;
     }
+
+    scrollToSection(target);
   });
 });
 

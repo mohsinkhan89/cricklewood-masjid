@@ -27,3 +27,6 @@ references prompt 009:
 
 references prompt 010:  
     Implement mobile menu and sidebar for improved navigation
+
+references prompt 011:  
+    update slider functionality and styling; adjust grid layout and footer alignment
