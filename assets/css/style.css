@@ -5004,3 +5004,401 @@ input {
     grid-template-columns: 1fr;
   }
 }
+/* Polished desktop navigation tabs */
+@media (min-width: 981px) {
+  .nav-wrap {
+    border-top: 1px solid rgba(215, 157, 37, 0.1) !important;
+    border-bottom: 1px solid rgba(215, 157, 37, 0.1);
+    background: rgba(255, 255, 255, 0.86) !important;
+    box-shadow: 0 8px 22px rgba(24, 21, 15, 0.04);
+  }
+
+  .nav-inner {
+    position: relative;
+    min-height: 64px !important;
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+
+  .nav-inner .mobile-menu-panel {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .nav-inner .main-menu {
+    position: relative;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 3px !important;
+    margin: 0 auto;
+    padding: 5px !important;
+    overflow: hidden;
+    border: 1px solid rgba(215, 157, 37, 0.18) !important;
+    border-radius: 12px !important;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 244, 237, 0.78)) !important;
+    box-shadow: 0 12px 26px rgba(24, 21, 15, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .nav-inner .main-menu a {
+    min-height: 38px !important;
+    padding: 0 14px !important;
+    border: 1px solid transparent;
+    border-radius: 8px !important;
+    color: #252525 !important;
+    background: transparent;
+    font-size: 10.5px !important;
+    line-height: 1;
+    font-weight: 900 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase;
+  }
+
+  .nav-inner .main-menu a::before,
+  .nav-inner .main-menu a.active::after {
+    display: none !important;
+  }
+
+  .nav-inner .main-menu a:hover {
+    color: var(--gold-dark) !important;
+    border-color: rgba(215, 157, 37, 0.22);
+    background: rgba(255, 250, 242, 0.9) !important;
+    box-shadow: none !important;
+    transform: none;
+  }
+
+  .nav-inner .main-menu a.active {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.28);
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+    box-shadow: 0 8px 18px rgba(185, 122, 9, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+  }
+
+  .nav-inner > .donate-pill {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    min-height: 42px !important;
+    transform: translateY(-50%);
+  }
+
+  .nav-inner > .donate-pill:hover {
+    transform: translateY(calc(-50% - 2px));
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1240px) {
+  .nav-inner .main-menu a {
+    padding-inline: 11px !important;
+    font-size: 10px !important;
+  }
+}
+/* Header alignment and compact active prayer refinement */
+@media (min-width: 981px) {
+  .topbar {
+    grid-template-columns: minmax(245px, 0.9fr) minmax(300px, 340px) minmax(430px, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .header-prayer-widget {
+    width: min(340px, 25vw) !important;
+    min-width: 300px !important;
+    padding: 6px 7px !important;
+    border-radius: 12px !important;
+  }
+
+  .header-prayer-widget .prayer-widget-head {
+    margin-bottom: 4px !important;
+  }
+
+  .header-prayer-widget .prayer-widget-head strong {
+    min-height: 18px;
+    padding: 2px 8px;
+    font-size: 10px !important;
+    line-height: 1 !important;
+    max-width: 100%;
+  }
+
+  .header-prayer-widget .prayer-widget-head strong span {
+    width: 4px;
+    height: 4px;
+    margin: 0 7px;
+  }
+
+  .header-next-prayer {
+    grid-template-columns: minmax(74px, 1fr) auto auto;
+    gap: 8px;
+    min-height: 34px;
+    padding: 6px 9px;
+    border-radius: 9px;
+  }
+
+  .header-next-prayer small,
+  .header-next-prayer em {
+    font-size: 7px;
+    line-height: 1;
+  }
+
+  .header-next-prayer b {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .header-next-prayer strong {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .header-next-prayer em {
+    grid-column: auto;
+    justify-self: end;
+    white-space: nowrap;
+  }
+
+  .contact-social {
+    gap: 12px !important;
+  }
+
+  .nav-inner {
+    justify-content: flex-start !important;
+  }
+
+  .nav-inner .mobile-menu-panel {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
+
+  .nav-inner .main-menu {
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1240px) {
+  .topbar {
+    grid-template-columns: minmax(230px, 0.8fr) minmax(292px, 330px) minmax(360px, 1fr) !important;
+  }
+
+  .header-prayer-widget {
+    min-width: 292px !important;
+  }
+
+  .header-next-prayer {
+    grid-template-columns: minmax(66px, 1fr) auto auto;
+    gap: 6px;
+  }
+
+  .header-next-prayer strong {
+    font-size: 17px;
+  }
+}
+/* Compact premium header prayer and daily prayer motion */
+@media (min-width: 981px) {
+  .topbar {
+    grid-template-columns: minmax(245px, 1fr) minmax(270px, 300px) minmax(430px, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .header-prayer-widget {
+    width: min(300px, 22vw) !important;
+    min-width: 270px !important;
+    padding: 5px 6px 6px !important;
+    border-radius: 12px !important;
+  }
+
+  .header-prayer-widget .prayer-widget-head {
+    margin-bottom: 4px !important;
+  }
+
+  .header-prayer-widget .prayer-widget-head strong {
+    min-height: 17px;
+    padding: 2px 8px;
+    border-color: rgba(215, 157, 37, 0.18);
+    font-size: 9px !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .header-prayer-widget .prayer-widget-head strong span {
+    width: 4px;
+    height: 4px;
+    margin: 0 6px;
+  }
+
+  .header-next-prayer {
+    grid-template-columns: auto 1fr auto !important;
+    gap: 7px !important;
+    min-height: 38px !important;
+    padding: 6px 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9px !important;
+    box-shadow: 0 8px 16px rgba(185, 122, 9, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+  }
+
+  .header-next-prayer span,
+  .header-next-name,
+  .header-next-main,
+  .header-next-begins {
+    min-width: 0;
+  }
+
+  .header-next-name {
+    display: grid !important;
+    gap: 1px;
+    padding-right: 8px;
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+  }
+
+  .header-next-name small,
+  .header-next-begins small,
+  .header-next-main em {
+    color: rgba(255, 255, 255, 0.76) !important;
+    font-size: 6.5px !important;
+    line-height: 1 !important;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .header-next-name b {
+    color: #fff;
+    font-size: 11px !important;
+    line-height: 1 !important;
+    font-weight: 950;
+  }
+
+  .header-next-main {
+    display: grid !important;
+    justify-items: center;
+    gap: 1px;
+  }
+
+  .header-next-main strong {
+    justify-self: center !important;
+    color: #fff;
+    font-size: 19px !important;
+    line-height: 0.95 !important;
+    font-weight: 950;
+  }
+
+  .header-next-main em {
+    grid-column: auto !important;
+    justify-self: center !important;
+    white-space: nowrap;
+  }
+
+  .header-next-begins {
+    display: grid !important;
+    justify-items: end;
+    gap: 1px;
+    padding: 4px 6px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.14);
+  }
+
+  .header-next-begins b {
+    color: #fff;
+    font-size: 10px !important;
+    line-height: 1 !important;
+    font-weight: 950;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1240px) {
+  .topbar {
+    grid-template-columns: minmax(228px, 0.9fr) minmax(260px, 286px) minmax(360px, 1fr) !important;
+  }
+
+  .header-prayer-widget {
+    width: min(286px, 24vw) !important;
+    min-width: 260px !important;
+  }
+
+  .header-next-prayer {
+    gap: 6px !important;
+    padding-inline: 7px !important;
+  }
+
+  .header-next-main strong {
+    font-size: 18px !important;
+  }
+}
+
+@keyframes dailyPrayerRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.daily-prayer-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.34s ease, box-shadow 0.34s ease, border-color 0.28s ease, background 0.28s ease;
+  animation: dailyPrayerRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--prayer-delay, 0ms);
+}
+
+.daily-prayer-card::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 0;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-dark), transparent);
+  opacity: 0;
+  transform: scaleX(0.45);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.34s ease;
+  z-index: 1;
+}
+
+.daily-prayer-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.daily-prayer-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(215, 157, 37, 0.42);
+  background: #fffdfa;
+  box-shadow: 0 18px 34px rgba(24, 21, 15, 0.12);
+}
+
+.daily-prayer-card:hover::before,
+.daily-prayer-card.active::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.daily-prayer-card:hover .daily-prayer-card-head span,
+.daily-prayer-card:hover .daily-prayer-times strong {
+  color: var(--gold-dark);
+}
+
+.daily-prayer-card.active:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 22px 38px rgba(185, 122, 9, 0.3);
+}
+
+.daily-prayer-card.active:hover .daily-prayer-card-head span,
+.daily-prayer-card.active:hover .daily-prayer-times strong {
+  color: #fff;
+}
+
+.daily-prayers-head.reveal.is-visible {
+  transition-duration: 0.82s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .daily-prayer-card {
+    animation: none;
+  }
+}

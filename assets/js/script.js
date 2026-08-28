@@ -222,6 +222,17 @@ function formatPrayerDateLabel(nowParts) {
   return `${formatGregorianDate(nowParts)} <span aria-hidden="true">&bull;</span> ${formatHijriDate(nowParts)}`;
 }
 
+function formatHeaderPrayerDateLabel(nowParts) {
+  const shortDate = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "UTC",
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  }).format(getPrayerDate(nowParts));
+
+  return `${shortDate} <span aria-hidden="true">&bull;</span> ${formatHijriDate(nowParts)}`;
+}
+
 function getPrayerDay(nowParts) {
   const monthStart = new Date(Date.UTC(PRAYER_TIMES_MONTH.year, PRAYER_TIMES_MONTH.month, 1));
   const today = new Date(Date.UTC(nowParts.year, nowParts.month, nowParts.day));
@@ -248,12 +259,18 @@ function renderHeaderNextPrayerWidget(widget, row, dateLabel, activePrayer) {
 
   listTarget.innerHTML = `
     <a class="header-next-prayer active" href="#prayer-times" aria-label="View today's prayer times">
-      <span>
-        <small>Next Prayer</small>
+      <span class="header-next-name">
+        <small>Next</small>
         <b>${activePrayer.label}</b>
       </span>
-      <strong>${getPrayerTime(row, activePrayer.jamah)}</strong>
-      <em>Begins ${getPrayerTime(row, activePrayer.begins)}</em>
+      <span class="header-next-main">
+        <strong>${getPrayerTime(row, activePrayer.jamah)}</strong>
+        <em>Jama'ah</em>
+      </span>
+      <span class="header-next-begins">
+        <small>Begins</small>
+        <b>${getPrayerTime(row, activePrayer.begins)}</b>
+      </span>
     </a>
   `;
 }
@@ -290,10 +307,10 @@ function renderDailyPrayerSection(row, dateLabel, activeKey) {
   });
 
   document.querySelectorAll("[data-prayer-full-list]").forEach((target) => {
-    const cards = PRAYER_DISPLAY.map((prayer) => {
+    const cards = PRAYER_DISPLAY.map((prayer, index) => {
       const isActive = prayer.key === activeKey;
       return `
-        <article class="daily-prayer-card${isActive ? " active" : ""}">
+        <article class="daily-prayer-card${isActive ? " active" : ""}" style="--prayer-delay: ${index * 70}ms">
           <div class="daily-prayer-card-head">
             <span>${isActive ? "Next Prayer" : "Prayer"}</span>
             <h3>${prayer.label}</h3>
@@ -308,7 +325,7 @@ function renderDailyPrayerSection(row, dateLabel, activeKey) {
 
     target.innerHTML = `
       ${cards}
-      <article class="daily-prayer-card sunrise-card">
+      <article class="daily-prayer-card sunrise-card" style="--prayer-delay: ${PRAYER_DISPLAY.length * 70}ms">
         <div class="daily-prayer-card-head">
           <span>Sunrise</span>
           <h3>Sunrise</h3>
@@ -330,10 +347,11 @@ function updatePrayerWidgets() {
   const activePrayer = getNextPrayer(row, nowParts.minutes, isCurrentDate);
   const activeKey = activePrayer.key;
   const dateLabel = formatPrayerDateLabel(nowParts);
+  const headerDateLabel = formatHeaderPrayerDateLabel(nowParts);
 
   document.querySelectorAll("[data-prayer-widget]").forEach((widget) => {
     if (widget.dataset.prayerMode === "next") {
-      renderHeaderNextPrayerWidget(widget, row, dateLabel, activePrayer);
+      renderHeaderNextPrayerWidget(widget, row, headerDateLabel, activePrayer);
       return;
     }
 
