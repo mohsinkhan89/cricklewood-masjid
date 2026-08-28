@@ -57,3 +57,6 @@ references prompt 019:
 
 references prompt 020:
     Update prayer widget and date display in header
+
+references prompt 021:
+    style: update daily prayers section heading for better alignment and presentation
