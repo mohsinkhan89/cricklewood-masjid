@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,17 +21,15 @@
           </span>
         </a>
 
-        <div class="prayer-card" aria-label="Prayer information">
-          <div>
-            <small><i class="fa-regular fa-clock"></i> Next Prayer</small>
-            <strong>Dhuhr 1:14 PM</strong>
-            <a href="#events">View Calendar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <div class="prayer-times-widget header-prayer-widget" data-prayer-widget aria-label="Today prayer times">
+          <div class="prayer-widget-head">
+            <div>
+              <small><i class="fa-regular fa-clock"></i> Today Prayer Times</small>
+              <strong data-prayer-date>Loading times</strong>
+            </div>
+            <a href="#events">Calendar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
-          <div class="date-box">
-            <small>Wednesday</small>
-            <strong>20</strong>
-            <span>Aug 2025</span>
-          </div>
+          <div class="prayer-times-list" data-prayer-list></div>
         </div>
 
         <div class="contact-social">
@@ -76,17 +74,15 @@
 
             <div class="mobile-sidebar-info">
               <span class="sidebar-section-title">Prayer Time</span>
-              <div class="prayer-card sidebar-prayer" aria-label="Prayer information">
-                <div>
-                  <small><i class="fa-regular fa-clock"></i> Next Prayer</small>
-                  <strong>Dhuhr 1:14 PM</strong>
-                  <a href="#events">View Calendar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <div class="prayer-times-widget sidebar-prayer-widget" data-prayer-widget aria-label="Today prayer times">
+                <div class="prayer-widget-head">
+                  <div>
+                    <small><i class="fa-regular fa-clock"></i> Today Prayer Times</small>
+                    <strong data-prayer-date>Loading times</strong>
+                  </div>
+                  <a href="#events">Calendar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="date-box">
-                  <small>Wednesday</small>
-                  <strong>20</strong>
-                  <span>Aug 2025</span>
-                </div>
+                <div class="prayer-times-list" data-prayer-list></div>
               </div>
 
               <span class="sidebar-section-title">Connect</span>
@@ -387,6 +383,3 @@
     <script src="assets/js/script.js"></script>
   </body>
 </html>
-
-
-

@@ -1,4 +1,4 @@
-﻿const slides = Array.from(document.querySelectorAll(".hero-slide"));
+const slides = Array.from(document.querySelectorAll(".hero-slide"));
 const hero = document.querySelector(".hero");
 const dotsWrap = document.querySelector(".slider-dots");
 const prevBtn = document.querySelector(".slider-btn.prev");
@@ -11,7 +11,52 @@ const hasMultipleSlides = slides.length > 1;
 let currentSlide = 0;
 let timer;
 let lockedScrollY = 0;
+const PRAYER_TIMES_MONTH = {
+  year: 2026,
+  month: 8,
+  rows: {
+    1: ["04:38", "05:15", "06:10", "13:06", "13:30", "17:41", "18:00", "19:50", "19:55", "21:01", "21:45"],
+    2: ["04:40", "05:15", "06:12", "13:05", "13:30", "17:39", "18:00", "19:48", "19:53", "20:59", "21:45"],
+    3: ["04:41", "05:15", "06:13", "13:05", "13:30", "17:37", "18:00", "19:46", "19:51", "20:57", "21:45"],
+    4: ["04:43", "05:15", "06:15", "13:05", "13:30", "17:35", "18:00", "19:43", "19:48", "20:55", "21:45"],
+    5: ["04:45", "05:15", "06:17", "13:04", "13:30", "17:34", "18:00", "19:41", "19:46", "20:53", "21:45"],
+    6: ["04:46", "05:15", "06:18", "13:04", "13:30", "17:32", "18:00", "19:39", "19:44", "20:51", "21:45"],
+    7: ["04:48", "05:30", "06:20", "13:04", "13:30", "17:30", "17:45", "19:37", "19:42", "20:50", "21:30"],
+    8: ["04:49", "05:30", "06:21", "13:03", "13:30", "17:28", "17:45", "19:34", "19:39", "20:47", "21:30"],
+    9: ["04:51", "05:30", "06:23", "13:03", "13:30", "17:26", "17:45", "19:32", "19:37", "20:45", "21:30"],
+    10: ["04:52", "05:30", "06:24", "13:03", "13:30", "17:25", "17:45", "19:30", "19:35", "20:43", "21:30"],
+    11: ["04:54", "05:30", "06:26", "13:02", "13:30", "17:23", "17:45", "19:28", "19:33", "20:42", "21:30"],
+    12: ["04:56", "05:30", "06:28", "13:02", "13:30", "17:21", "17:45", "19:25", "19:30", "20:39", "21:30"],
+    13: ["04:57", "05:30", "06:29", "13:02", "13:30", "17:19", "17:45", "19:23", "19:28", "20:37", "21:30"],
+    14: ["04:59", "05:45", "06:31", "13:01", "13:30", "17:17", "17:30", "19:21", "19:26", "20:35", "21:15"],
+    15: ["05:00", "05:45", "06:32", "13:01", "13:30", "17:15", "17:30", "19:18", "19:23", "20:33", "21:15"],
+    16: ["05:03", "05:45", "06:34", "13:01", "13:30", "17:13", "17:30", "19:16", "19:21", "20:31", "21:15"],
+    17: ["05:05", "05:45", "06:36", "13:00", "13:30", "17:11", "17:30", "19:14", "19:19", "20:29", "21:15"],
+    18: ["05:06", "05:45", "06:37", "13:00", "13:30", "17:09", "17:30", "19:11", "19:16", "20:26", "21:15"],
+    19: ["05:09", "05:45", "06:39", "12:59", "13:30", "17:07", "17:30", "19:09", "19:14", "20:24", "21:15"],
+    20: ["05:10", "05:45", "06:40", "12:59", "13:30", "17:06", "17:30", "19:07", "19:12", "20:22", "21:15"],
+    21: ["05:12", "06:00", "06:42", "12:59", "13:30", "17:04", "17:30", "19:04", "19:09", "20:20", "21:00"],
+    22: ["05:15", "06:00", "06:44", "12:58", "13:30", "17:02", "17:30", "19:02", "19:07", "20:18", "21:00"],
+    23: ["05:16", "06:00", "06:45", "12:58", "13:30", "17:00", "17:30", "19:00", "19:05", "20:16", "21:00"],
+    24: ["05:18", "06:00", "06:47", "12:58", "13:30", "16:58", "17:30", "18:58", "19:03", "20:14", "21:00"],
+    25: ["05:20", "06:00", "06:48", "12:57", "13:30", "16:56", "17:30", "18:55", "19:00", "20:12", "21:00"],
+    26: ["05:22", "06:00", "06:50", "12:57", "13:30", "16:54", "17:30", "18:53", "18:58", "20:10", "21:00"],
+    27: ["05:24", "06:00", "06:52", "12:57", "13:30", "16:52", "17:30", "18:51", "18:56", "20:08", "21:00"],
+    28: ["05:26", "06:00", "06:53", "12:56", "13:30", "16:50", "17:15", "18:48", "18:53", "20:05", "20:45"],
+    29: ["05:28", "06:00", "06:55", "12:56", "13:30", "16:48", "17:15", "18:46", "18:51", "20:03", "20:45"],
+    30: ["05:30", "06:00", "06:57", "12:56", "13:30", "16:46", "17:15", "18:44", "18:49", "20:01", "20:45"]
+  }
+};
 
+const PRAYER_COLUMNS = ["fajrBegins", "fajrJamah", "sunrise", "zuhrBegins", "zuhrJamah", "asrBegins", "asrJamah", "maghribBegins", "maghribJamah", "ishaBegins", "ishaJamah"];
+const PRAYER_DISPLAY = [
+  { key: "fajr", label: "Fajr", begins: "fajrBegins", jamah: "fajrJamah" },
+  { key: "zuhr", label: "Dhuhr", begins: "zuhrBegins", jamah: "zuhrJamah" },
+  { key: "asr", label: "Asr", begins: "asrBegins", jamah: "asrJamah" },
+  { key: "maghrib", label: "Maghrib", begins: "maghribBegins", jamah: "maghribJamah" },
+  { key: "isha", label: "Isha", begins: "ishaBegins", jamah: "ishaJamah" }
+];
+const LONDON_TIME_ZONE = "Europe/London";
 function showSlide(index) {
   if (!slides.length) return;
 
@@ -113,6 +158,96 @@ menuBackdrop?.addEventListener("click", () => setMenuOpen(false));
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenuOpen(false);
 });
+function getPrayerTime(row, column) {
+  return row[PRAYER_COLUMNS.indexOf(column)];
+}
+
+function toMinutes(time) {
+  const [hours, minutes] = time.split(":").map(Number);
+  return hours * 60 + minutes;
+}
+
+function getLondonNowParts() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: LONDON_TIME_ZONE,
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).formatToParts(new Date());
+  const lookup = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  const hour = Number(lookup.hour) % 24;
+
+  return {
+    year: Number(lookup.year),
+    month: Number(lookup.month) - 1,
+    day: Number(lookup.day),
+    minutes: hour * 60 + Number(lookup.minute)
+  };
+}
+
+function formatPrayerDate(day) {
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone: "UTC",
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  }).format(new Date(Date.UTC(PRAYER_TIMES_MONTH.year, PRAYER_TIMES_MONTH.month, day)));
+}
+
+function getPrayerDay(nowParts) {
+  const monthStart = new Date(Date.UTC(PRAYER_TIMES_MONTH.year, PRAYER_TIMES_MONTH.month, 1));
+  const today = new Date(Date.UTC(nowParts.year, nowParts.month, nowParts.day));
+
+  if (nowParts.year === PRAYER_TIMES_MONTH.year && nowParts.month === PRAYER_TIMES_MONTH.month) {
+    return { day: nowParts.day, isCurrentDate: true };
+  }
+
+  return { day: today < monthStart ? 1 : 30, isCurrentDate: false };
+}
+
+function getNextPrayerKey(row, nowMinutes, isCurrentDate) {
+  if (!isCurrentDate) return PRAYER_DISPLAY[0].key;
+
+  const nextPrayer = PRAYER_DISPLAY.find((prayer) => nowMinutes < toMinutes(getPrayerTime(row, prayer.jamah)));
+  return (nextPrayer || PRAYER_DISPLAY[0]).key;
+}
+
+function renderPrayerWidget(widget, row, day, activeKey) {
+  const dateTarget = widget.querySelector("[data-prayer-date]");
+  const listTarget = widget.querySelector("[data-prayer-list]");
+
+  if (dateTarget) dateTarget.textContent = formatPrayerDate(day);
+  if (!listTarget) return;
+
+  listTarget.innerHTML = PRAYER_DISPLAY.map((prayer) => {
+    const isActive = prayer.key === activeKey;
+    return `
+      <div class="prayer-time-item${isActive ? " active" : ""}" data-prayer="${prayer.key}">
+        <span>${prayer.label}</span>
+        <strong>${getPrayerTime(row, prayer.jamah)}</strong>
+        <small>Begins ${getPrayerTime(row, prayer.begins)}</small>
+        ${isActive ? "<em>Next</em>" : ""}
+      </div>
+    `;
+  }).join("");
+}
+
+function updatePrayerWidgets() {
+  const widgets = document.querySelectorAll("[data-prayer-widget]");
+  if (!widgets.length) return;
+
+  const nowParts = getLondonNowParts();
+  const { day, isCurrentDate } = getPrayerDay(nowParts);
+  const row = PRAYER_TIMES_MONTH.rows[day];
+  if (!row) return;
+
+  const activeKey = getNextPrayerKey(row, nowParts.minutes, isCurrentDate);
+  widgets.forEach((widget) => renderPrayerWidget(widget, row, day, activeKey));
+}
 document.querySelectorAll(".amount-grid button").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".amount-grid button").forEach((item) => item.classList.remove("selected"));
@@ -146,6 +281,8 @@ if ("IntersectionObserver" in window) {
   revealTargets.forEach((element) => element.classList.add("is-visible"));
 }
 
+updatePrayerWidgets();
+setInterval(updatePrayerWidgets, 60000);
 showSlide(0);
 startSlider();
 
@@ -256,4 +393,3 @@ backToTop?.addEventListener("click", () => {
 window.addEventListener("scroll", updateActiveNav, { passive: true });
 window.addEventListener("resize", updateActiveNav);
 updateActiveNav();
-

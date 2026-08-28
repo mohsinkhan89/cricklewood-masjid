@@ -36,3 +36,6 @@ references prompt 012:
 
 references prompt 013:    
     add sidebar-section-title to hidden elements in mobile view
+
+references prompt 014:    
+    Refactor code structure for improved readability and maintainability
