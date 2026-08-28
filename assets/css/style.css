@@ -5008,7 +5008,7 @@ input {
 
 @media (max-width: 560px) {
   .daily-prayer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 /* Polished desktop navigation tabs */
