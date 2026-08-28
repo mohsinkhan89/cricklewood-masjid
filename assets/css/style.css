@@ -5900,7 +5900,7 @@ input {
 
   .nav-inner.container-custom {
     width: calc(100% - 18px) !important;
-    min-height: 50px !important;
+    min-height: 60px !important;
     padding-block: 4px !important;
     gap: 8px !important;
   }
@@ -5912,15 +5912,15 @@ input {
   }
 
   .mobile-brand .brand-mark {
-    width: 30px !important;
-    height: 30px !important;
+    width: 50px !important;
+    height: 50px !important;
   }
 
   .mobile-brand strong {
     max-width: min(190px, calc(100vw - 92px)) !important;
     overflow: hidden;
     color: #171717 !important;
-    font-size: 9px !important;
+    font-size: 14px !important;
     line-height: 1 !important;
     letter-spacing: 0 !important;
     white-space: nowrap;
@@ -5928,12 +5928,12 @@ input {
   }
 
   .menu-toggle {
-    width: 34px !important;
-    height: 34px !important;
+    width: 50px !important;
+    height: 40px !important;
     flex: 0 0 34px;
     border-radius: 8px !important;
     box-shadow: 0 6px 14px rgba(24, 21, 15, 0.09) !important;
-    padding:  4px 0px !important;
+    padding: 10px 0px !important;
   }
 
   .menu-toggle span {

@@ -69,3 +69,6 @@ references prompt 023:
 
 references prompt 024:
     Add responsive styles for hero section on medium screens
+
+references prompt 025:
+    update mobile brand styles for improved visibility
