@@ -201,6 +201,22 @@ function formatGregorianDate(nowParts) {
   }).format(getPrayerDate(nowParts));
 }
 
+function getOrdinalDay(day) {
+  if (day > 3 && day < 21) return `${day}th`;
+
+  const suffixes = { 1: "st", 2: "nd", 3: "rd" };
+  return `${day}${suffixes[day % 10] || "th"}`;
+}
+
+function formatLondonClockTime(nowParts) {
+  const hours = Math.floor(nowParts.minutes / 60);
+  const minutes = nowParts.minutes % 60;
+  const period = hours >= 12 ? "pm" : "am";
+  const displayHours = hours % 12 || 12;
+
+  return `${String(displayHours).padStart(2, "0")}:${String(minutes).padStart(2, "0")} ${period}`;
+}
+
 function formatHijriDate(nowParts) {
   const parts = new Intl.DateTimeFormat("en-GB-u-ca-islamic-umalqura", {
     timeZone: "UTC",
@@ -215,7 +231,7 @@ function formatHijriDate(nowParts) {
     .replace(/Jumada II/i, "Jumada Al-Thani")
     .replace(/Jumada I/i, "Jumada Al-Awwal");
 
-  return `${lookup.day} ${month} ${lookup.year}`;
+  return `${lookup.day} ${month} ${lookup.year} AH`;
 }
 
 function formatPrayerDateLabel(nowParts) {
@@ -223,14 +239,13 @@ function formatPrayerDateLabel(nowParts) {
 }
 
 function formatHeaderPrayerDateLabel(nowParts) {
-  const shortDate = new Intl.DateTimeFormat("en-GB", {
+  const month = new Intl.DateTimeFormat("en-GB", {
     timeZone: "UTC",
-    day: "numeric",
-    month: "short",
-    year: "numeric"
+    month: "long"
   }).format(getPrayerDate(nowParts));
+  const dateTime = `${getOrdinalDay(nowParts.day)} ${month} ${nowParts.year} | ${formatLondonClockTime(nowParts)}`;
 
-  return `${shortDate} <span aria-hidden="true">&bull;</span> ${formatHijriDate(nowParts)}`;
+  return `<span class="header-date-line">${dateTime}</span><span class="header-hijri-line">${formatHijriDate(nowParts)}</span>`;
 }
 
 function getPrayerDay(nowParts) {
@@ -244,9 +259,7 @@ function getPrayerDay(nowParts) {
   return { day: today < monthStart ? 1 : 30, isCurrentDate: false };
 }
 
-function getNextPrayer(row, nowMinutes, isCurrentDate) {
-  if (!isCurrentDate) return PRAYER_DISPLAY[0];
-
+function getNextPrayer(row, nowMinutes) {
   return PRAYER_DISPLAY.find((prayer) => nowMinutes < toMinutes(getPrayerTime(row, prayer.jamah))) || PRAYER_DISPLAY[0];
 }
 
@@ -260,7 +273,7 @@ function renderHeaderNextPrayerWidget(widget, row, dateLabel, activePrayer) {
   listTarget.innerHTML = `
     <a class="header-next-prayer active" href="#prayer-times" aria-label="View today's prayer times">
       <span class="header-next-name">
-        <small>Next</small>
+        <small>Next Namaz</small>
         <b>${activePrayer.label}</b>
       </span>
       <span class="header-next-main">
@@ -344,10 +357,14 @@ function updatePrayerWidgets() {
   const row = PRAYER_TIMES_MONTH.rows[day];
   if (!row) return;
 
-  const activePrayer = getNextPrayer(row, nowParts.minutes, isCurrentDate);
+  const activePrayer = getNextPrayer(row, nowParts.minutes);
   const activeKey = activePrayer.key;
   const dateLabel = formatPrayerDateLabel(nowParts);
   const headerDateLabel = formatHeaderPrayerDateLabel(nowParts);
+
+  document.querySelectorAll("[data-header-date]").forEach((target) => {
+    target.innerHTML = headerDateLabel;
+  });
 
   document.querySelectorAll("[data-prayer-widget]").forEach((widget) => {
     if (widget.dataset.prayerMode === "next") {
