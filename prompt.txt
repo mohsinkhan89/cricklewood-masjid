@@ -30,3 +30,6 @@ references prompt 010:
 
 references prompt 011:  
     update slider functionality and styling; adjust grid layout and footer alignment
+
+references prompt 012:  
+    update styles for news card padding and service grid layout on compact screens
