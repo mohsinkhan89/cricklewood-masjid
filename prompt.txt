@@ -75,3 +75,6 @@ references prompt 025:
 
 references prompt 026:
     update daily prayer grid layout for better responsiveness
+
+references prompt 027:
+    update mobile styles for improved accessibility and layout
