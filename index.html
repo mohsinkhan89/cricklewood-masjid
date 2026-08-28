@@ -21,7 +21,7 @@
           </span>
         </a>
 
-        <div class="prayer-times-widget header-prayer-widget" data-prayer-widget aria-label="Today prayer times">
+        <div class="prayer-times-widget header-prayer-widget" data-prayer-widget data-prayer-mode="next" aria-label="Next prayer time">
           <div class="prayer-widget-head">
             <div>
               <small><i class="fa-regular fa-clock"></i> Today Prayer Times</small>
@@ -64,6 +64,7 @@
             <span class="sidebar-section-title">Menu</span>
             <ul class="main-menu">
               <li><a class="active" href="#home">Home</a></li>
+              <li><a href="#prayer-times">Prayer</a></li>
               <li><a href="#news">News</a></li>
               <li><a href="#events">Events</a></li>
               <li><a href="#services">Services</a></li>
@@ -74,7 +75,7 @@
 
             <div class="mobile-sidebar-info">
               <span class="sidebar-section-title">Prayer Time</span>
-              <div class="prayer-times-widget sidebar-prayer-widget" data-prayer-widget aria-label="Today prayer times">
+              <div class="prayer-times-widget sidebar-prayer-widget" data-prayer-widget data-prayer-mode="full" aria-label="Today prayer times">
                 <div class="prayer-widget-head">
                   <div>
                     <small><i class="fa-regular fa-clock"></i> Today Prayer Times</small>
@@ -135,7 +136,18 @@
         <button class="slider-btn next" type="button" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
         <div class="slider-dots" aria-label="Hero slide controls"></div>
       </section>
-
+      <section id="prayer-times" class="daily-prayers">
+        <div class="container-custom">
+          <div class="daily-prayers-head">
+            <div>
+              <span class="daily-eyebrow"><i class="fa-regular fa-clock"></i> Today's Prayer Times</span>
+              <h2>Prayer Times for Today</h2>
+            </div>
+            <p data-prayer-section-date>Loading prayer date</p>
+          </div>
+          <div class="daily-prayer-grid" data-prayer-full-list></div>
+        </div>
+      </section>
       <section id="news" class="news-events container-custom">
         <div class="latest">
           <div class="section-title">

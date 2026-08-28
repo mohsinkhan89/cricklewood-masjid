@@ -202,20 +202,20 @@ function formatGregorianDate(nowParts) {
 }
 
 function formatHijriDate(nowParts) {
-  const date = getPrayerDate(nowParts);
-  const formatted = new Intl.DateTimeFormat("en-GB-u-ca-islamic-umalqura", {
+  const parts = new Intl.DateTimeFormat("en-GB-u-ca-islamic-umalqura", {
     timeZone: "UTC",
     day: "numeric",
     month: "long",
     year: "numeric"
-  }).format(date);
+  }).formatToParts(getPrayerDate(nowParts));
+  const lookup = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  const month = (lookup.month || "")
+    .replace(/Rabi.? II/i, "Rabi' Al-Thani")
+    .replace(/Rabi.? I/i, "Rabi' Al-Awwal")
+    .replace(/Jumada II/i, "Jumada Al-Thani")
+    .replace(/Jumada I/i, "Jumada Al-Awwal");
 
-  return formatted
-    .replace(" AH", "")
-    .replace("RabiÊ» I", "Rabi' Al-Awwal")
-    .replace("RabiÊ» II", "Rabi' Al-Thani")
-    .replace("Jumada I", "Jumada Al-Awwal")
-    .replace("Jumada II", "Jumada Al-Thani");
+  return `${lookup.day} ${month} ${lookup.year}`;
 }
 
 function formatPrayerDateLabel(nowParts) {
@@ -233,14 +233,32 @@ function getPrayerDay(nowParts) {
   return { day: today < monthStart ? 1 : 30, isCurrentDate: false };
 }
 
-function getNextPrayerKey(row, nowMinutes, isCurrentDate) {
-  if (!isCurrentDate) return PRAYER_DISPLAY[0].key;
+function getNextPrayer(row, nowMinutes, isCurrentDate) {
+  if (!isCurrentDate) return PRAYER_DISPLAY[0];
 
-  const nextPrayer = PRAYER_DISPLAY.find((prayer) => nowMinutes < toMinutes(getPrayerTime(row, prayer.jamah)));
-  return (nextPrayer || PRAYER_DISPLAY[0]).key;
+  return PRAYER_DISPLAY.find((prayer) => nowMinutes < toMinutes(getPrayerTime(row, prayer.jamah))) || PRAYER_DISPLAY[0];
 }
 
-function renderPrayerWidget(widget, row, dateLabel, activeKey) {
+function renderHeaderNextPrayerWidget(widget, row, dateLabel, activePrayer) {
+  const dateTarget = widget.querySelector("[data-prayer-date]");
+  const listTarget = widget.querySelector("[data-prayer-list]");
+
+  if (dateTarget) dateTarget.innerHTML = dateLabel;
+  if (!listTarget) return;
+
+  listTarget.innerHTML = `
+    <a class="header-next-prayer active" href="#prayer-times" aria-label="View today's prayer times">
+      <span>
+        <small>Next Prayer</small>
+        <b>${activePrayer.label}</b>
+      </span>
+      <strong>${getPrayerTime(row, activePrayer.jamah)}</strong>
+      <em>Begins ${getPrayerTime(row, activePrayer.begins)}</em>
+    </a>
+  `;
+}
+
+function renderPrayerTimetable(widget, row, dateLabel, activeKey) {
   const dateTarget = widget.querySelector("[data-prayer-date]");
   const listTarget = widget.querySelector("[data-prayer-list]");
 
@@ -260,23 +278,69 @@ function renderPrayerWidget(widget, row, dateLabel, activeKey) {
   }).join("");
 
   listTarget.innerHTML = `
-    <a class="prayer-calendar-link" href="#events">Full Timetable<br>&amp; Calendar</a>
+    <a class="prayer-calendar-link" href="#prayer-times">Full Timetable<br>&amp; Calendar</a>
     <div class="prayer-row-labels" aria-hidden="true"><span></span><span>Begins</span><span>Jama'ah</span></div>
     ${prayerColumns}
   `;
 }
-function updatePrayerWidgets() {
-  const widgets = document.querySelectorAll("[data-prayer-widget]");
-  if (!widgets.length) return;
 
+function renderDailyPrayerSection(row, dateLabel, activeKey) {
+  document.querySelectorAll("[data-prayer-section-date]").forEach((target) => {
+    target.innerHTML = dateLabel;
+  });
+
+  document.querySelectorAll("[data-prayer-full-list]").forEach((target) => {
+    const cards = PRAYER_DISPLAY.map((prayer) => {
+      const isActive = prayer.key === activeKey;
+      return `
+        <article class="daily-prayer-card${isActive ? " active" : ""}">
+          <div class="daily-prayer-card-head">
+            <span>${isActive ? "Next Prayer" : "Prayer"}</span>
+            <h3>${prayer.label}</h3>
+          </div>
+          <div class="daily-prayer-times">
+            <div><span>Begins</span><strong>${getPrayerTime(row, prayer.begins)}</strong></div>
+            <div><span>Jama'ah</span><strong>${getPrayerTime(row, prayer.jamah)}</strong></div>
+          </div>
+        </article>
+      `;
+    }).join("");
+
+    target.innerHTML = `
+      ${cards}
+      <article class="daily-prayer-card sunrise-card">
+        <div class="daily-prayer-card-head">
+          <span>Sunrise</span>
+          <h3>Sunrise</h3>
+        </div>
+        <div class="daily-prayer-times single">
+          <div><span>Time</span><strong>${getPrayerTime(row, "sunrise")}</strong></div>
+        </div>
+      </article>
+    `;
+  });
+}
+
+function updatePrayerWidgets() {
   const nowParts = getLondonNowParts();
   const { day, isCurrentDate } = getPrayerDay(nowParts);
   const row = PRAYER_TIMES_MONTH.rows[day];
   if (!row) return;
 
-  const activeKey = getNextPrayerKey(row, nowParts.minutes, isCurrentDate);
+  const activePrayer = getNextPrayer(row, nowParts.minutes, isCurrentDate);
+  const activeKey = activePrayer.key;
   const dateLabel = formatPrayerDateLabel(nowParts);
-  widgets.forEach((widget) => renderPrayerWidget(widget, row, dateLabel, activeKey));
+
+  document.querySelectorAll("[data-prayer-widget]").forEach((widget) => {
+    if (widget.dataset.prayerMode === "next") {
+      renderHeaderNextPrayerWidget(widget, row, dateLabel, activePrayer);
+      return;
+    }
+
+    renderPrayerTimetable(widget, row, dateLabel, activeKey);
+  });
+
+  renderDailyPrayerSection(row, dateLabel, activeKey);
 }
 document.querySelectorAll(".amount-grid button").forEach((button) => {
   button.addEventListener("click", () => {
@@ -286,7 +350,7 @@ document.querySelectorAll(".amount-grid button").forEach((button) => {
 });
 
 const revealTargets = document.querySelectorAll(
-  ".section-title, .feature-card, .news-card, .event-item, .services article, .donation-box, .newsletter-box, .visit, .quick-panels a, .contact-copy, .contact-detail-list a, .contact-form, .footer-modern > *, .footer-bottom"
+  ".section-title, .daily-prayers-head, .daily-prayer-card, .feature-card, .news-card, .event-item, .services article, .donation-box, .newsletter-box, .visit, .quick-panels a, .contact-copy, .contact-detail-list a, .contact-form, .footer-modern > *, .footer-bottom"
 );
 
 revealTargets.forEach((element, index) => {
@@ -367,7 +431,7 @@ const header = document.querySelector(".site-header");
 const backToTop = document.querySelector(".back-to-top");
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
 const navLinks = Array.from(document.querySelectorAll(".main-menu a[href^='#']"));
-const sectionIds = ["home", "news", "events", "services", "support", "visit", "contact"];
+const sectionIds = ["home", "prayer-times", "news", "events", "services", "support", "visit", "contact"];
 const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
 function getHeaderOffset() {

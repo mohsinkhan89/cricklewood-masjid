@@ -48,3 +48,6 @@ references prompt 016:
 
 references prompt 017:    
     enhance prayer timetable widget with detailed formatting and improved layout
+
+references prompt 018:    
+    update prayer widget and add daily prayer section
