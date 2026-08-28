@@ -188,14 +188,14 @@ function getLondonNowParts() {
   };
 }
 
-function formatPrayerDate(day) {
+function formatCurrentPrayerDate(nowParts) {
   return new Intl.DateTimeFormat("en-GB", {
     timeZone: "UTC",
     weekday: "short",
     day: "numeric",
     month: "short",
     year: "numeric"
-  }).format(new Date(Date.UTC(PRAYER_TIMES_MONTH.year, PRAYER_TIMES_MONTH.month, day)));
+  }).format(new Date(Date.UTC(nowParts.year, nowParts.month, nowParts.day)));
 }
 
 function getPrayerDay(nowParts) {
@@ -216,11 +216,11 @@ function getNextPrayerKey(row, nowMinutes, isCurrentDate) {
   return (nextPrayer || PRAYER_DISPLAY[0]).key;
 }
 
-function renderPrayerWidget(widget, row, day, activeKey) {
+function renderPrayerWidget(widget, row, dateLabel, activeKey) {
   const dateTarget = widget.querySelector("[data-prayer-date]");
   const listTarget = widget.querySelector("[data-prayer-list]");
 
-  if (dateTarget) dateTarget.textContent = formatPrayerDate(day);
+  if (dateTarget) dateTarget.textContent = dateLabel;
   if (!listTarget) return;
 
   listTarget.innerHTML = PRAYER_DISPLAY.map((prayer) => {
@@ -246,7 +246,8 @@ function updatePrayerWidgets() {
   if (!row) return;
 
   const activeKey = getNextPrayerKey(row, nowParts.minutes, isCurrentDate);
-  widgets.forEach((widget) => renderPrayerWidget(widget, row, day, activeKey));
+  const dateLabel = formatCurrentPrayerDate(nowParts);
+  widgets.forEach((widget) => renderPrayerWidget(widget, row, dateLabel, activeKey));
 }
 document.querySelectorAll(".amount-grid button").forEach((button) => {
   button.addEventListener("click", () => {
