@@ -3,7 +3,9 @@ const dotsWrap = document.querySelector(".slider-dots");
 const prevBtn = document.querySelector(".slider-btn.prev");
 const nextBtn = document.querySelector(".slider-btn.next");
 const menuToggle = document.querySelector(".menu-toggle");
-const mainMenu = document.querySelector(".main-menu");
+const mainMenu = document.querySelector(".mobile-menu-panel");
+const menuClose = document.querySelector(".menu-close");
+const menuBackdrop = document.querySelector(".mobile-menu-backdrop");
 let currentSlide = 0;
 let timer;
 
@@ -50,9 +52,28 @@ nextBtn?.addEventListener("click", () => {
   startSlider();
 });
 
+function setMenuOpen(isOpen) {
+  if (!mainMenu) return;
+
+  mainMenu.classList.toggle("open", isOpen);
+  menuToggle?.setAttribute("aria-expanded", String(isOpen));
+  document.body.classList.toggle("menu-open", isOpen);
+
+  if (menuBackdrop) {
+    menuBackdrop.hidden = !isOpen;
+    menuBackdrop.classList.toggle("show", isOpen);
+  }
+}
+
 menuToggle?.addEventListener("click", () => {
-  const isOpen = mainMenu.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  setMenuOpen(!mainMenu?.classList.contains("open"));
+});
+
+menuClose?.addEventListener("click", () => setMenuOpen(false));
+menuBackdrop?.addEventListener("click", () => setMenuOpen(false));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setMenuOpen(false);
 });
 
 document.querySelectorAll(".amount-grid button").forEach((button) => {
@@ -166,8 +187,7 @@ anchorLinks.forEach((link) => {
     scrollToSection(target);
 
     if (mainMenu?.classList.contains("open")) {
-      mainMenu.classList.remove("open");
-      menuToggle?.setAttribute("aria-expanded", "false");
+      setMenuOpen(false);
     }
   });
 });

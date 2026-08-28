@@ -3807,3 +3807,406 @@ input {
   }
 }
 
+
+/* Compact mobile header and sidebar */
+.mobile-brand,
+.mobile-sidebar-head,
+.mobile-sidebar-info,
+.mobile-menu-backdrop {
+  display: none;
+}
+
+.mobile-menu-panel {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 980px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .site-header {
+    z-index: 90;
+  }
+
+  .topbar {
+    display: none !important;
+  }
+
+  .nav-wrap {
+    position: relative;
+    border-top: 0 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .nav-inner {
+    min-height: 64px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+    padding-block: 8px;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 96;
+    order: 2;
+    width: 42px !important;
+    height: 42px !important;
+    display: grid !important;
+    place-items: center;
+    padding: 0;
+    border-radius: 10px !important;
+    background: #fff !important;
+    box-shadow: 0 8px 18px rgba(24, 21, 15, 0.08);
+  }
+
+  .menu-toggle span {
+    width: 21px;
+    height: 2px;
+    margin: 3px auto;
+    border-radius: 99px;
+  }
+
+  .nav-inner > .donate-pill {
+    display: none !important;
+  }
+
+  .mobile-brand {
+    order: 1;
+    display: inline-flex !important;
+    justify-self: start;
+    margin-right: auto;
+    padding: 0 !important;
+    gap: 8px;
+  }
+
+  .mobile-brand .brand-mark {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .mobile-brand strong {
+    max-width: 158px;
+    color: #171717;
+    font-size: 13px !important;
+    line-height: 1.05;
+  }
+
+  .mobile-brand small {
+    color: #6d6253;
+    font-size: 9px !important;
+    font-weight: 800;
+  }
+
+  .mobile-menu-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 95;
+    width: min(332px, calc(100vw - 38px));
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 16px;
+    overflow-y: auto;
+    border-left: 1px solid rgba(215, 157, 37, 0.18);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 248, 237, 0.96)),
+      url("../img/pattern.svg") right -90px bottom -80px / 250px no-repeat;
+    box-shadow: -22px 0 45px rgba(24, 21, 15, 0.2);
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform 0.28s ease, visibility 0.28s ease;
+  }
+
+  .mobile-menu-panel.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .mobile-menu-backdrop.show {
+    position: fixed;
+    inset: 0;
+    z-index: 88;
+    display: block;
+    border: 0;
+    background: rgba(17, 19, 23, 0.42);
+    backdrop-filter: blur(3px);
+  }
+
+  .mobile-sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(215, 157, 37, 0.16);
+  }
+
+  .sidebar-brand {
+    padding: 0 !important;
+    gap: 8px;
+  }
+
+  .sidebar-brand .brand-mark {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .sidebar-brand strong {
+    max-width: 150px;
+    color: #171717;
+    font-size: 12px !important;
+  }
+
+  .sidebar-brand small {
+    color: #6d6253;
+    font-size: 9px !important;
+    font-weight: 800;
+  }
+
+  .menu-close {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 1px solid rgba(215, 157, 37, 0.18);
+    border-radius: 10px;
+    color: #171717;
+    background: #fff;
+    cursor: pointer;
+  }
+
+
+  .sidebar-section-title {
+    display: block;
+    margin: 2px 0 -4px;
+    color: #9a6509;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .mobile-menu-panel.open .mobile-sidebar-head,
+  .mobile-menu-panel.open .mobile-sidebar-info {
+    display: grid !important;
+  }
+
+  .mobile-menu-panel.open .mobile-sidebar-head {
+    display: flex !important;
+  }
+
+  .mobile-menu-panel.open .main-menu {
+    display: grid !important;
+  }
+  .mobile-menu-panel .main-menu {
+    position: static !important;
+    inset: auto !important;
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 7px !important;
+    margin: 0;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .mobile-menu-panel .main-menu > li {
+    width: 100%;
+  }
+
+  .mobile-menu-panel .main-menu a {
+    width: 100%;
+    min-height: 42px;
+    justify-content: space-between;
+    padding: 0 13px !important;
+    border: 1px solid rgba(215, 157, 37, 0.13);
+    border-radius: 9px !important;
+    background: rgba(255, 255, 255, 0.76);
+    color: #1d1f22;
+    font-size: 12px !important;
+  }
+
+  .mobile-menu-panel .main-menu a.active,
+  .mobile-menu-panel .main-menu a:hover {
+    color: #fff !important;
+    background: linear-gradient(135deg, #dba63a, #bd7e12) !important;
+  }
+
+  .mobile-sidebar-info {
+    display: grid;
+    gap: 12px;
+    margin-top: 2px;
+  }
+
+  .mobile-sidebar-info .prayer-card {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: 1fr 82px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .mobile-sidebar-info .prayer-card > div {
+    padding: 9px 12px;
+  }
+
+  .mobile-sidebar-info .date-box {
+    display: grid;
+    place-items: center;
+  }
+
+  .mobile-sidebar-info .date-box strong {
+    font-size: 26px;
+  }
+
+  .sidebar-call {
+    width: 100%;
+    justify-content: flex-start !important;
+    gap: 12px;
+    margin: 0;
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.86) !important;
+  }
+
+  .sidebar-call i {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+  }
+
+  .sidebar-socials {
+    justify-content: center;
+    gap: 10px;
+    padding: 2px 0 4px;
+  }
+
+  .sidebar-socials a {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  #home,
+  #news,
+  #events,
+  #services,
+  #support,
+  #visit,
+  #community,
+  #contact {
+    scroll-margin-top: 86px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    min-height: 58px !important;
+    padding-block: 7px;
+  }
+
+  .menu-toggle {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .mobile-brand {
+    gap: 7px;
+  }
+
+  .mobile-brand .brand-mark {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .mobile-brand strong {
+    max-width: 145px;
+    font-size: 11px !important;
+  }
+
+  .mobile-brand small {
+    font-size: 8px !important;
+  }
+
+  .mobile-menu-panel {
+    width: min(314px, calc(100vw - 28px));
+    padding: 14px;
+  }
+
+  .mobile-sidebar-info .prayer-card {
+    grid-template-columns: 1fr 78px;
+  }
+
+  .mobile-sidebar-info .prayer-card strong {
+    font-size: 14px;
+  }
+
+  .mobile-sidebar-info .date-box strong {
+    font-size: 24px;
+  }
+}
+
+
+/* Force mobile sidebar above page content */
+@media (max-width: 980px) {
+  .site-header {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .mobile-menu-panel {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    z-index: 1002 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100dvh;
+    padding-top: max(16px, env(safe-area-inset-top));
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+
+  .mobile-menu-panel.open {
+    display: flex !important;
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .mobile-menu-panel.open .sidebar-section-title,
+  .mobile-menu-panel.open .main-menu,
+  .mobile-menu-panel.open .mobile-sidebar-info,
+  .mobile-menu-panel.open .sidebar-prayer,
+  .mobile-menu-panel.open .sidebar-call,
+  .mobile-menu-panel.open .sidebar-socials {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .mobile-menu-panel.open .main-menu,
+  .mobile-menu-panel.open .mobile-sidebar-info {
+    position: relative !important;
+    z-index: 1;
+  }
+
+  .mobile-menu-backdrop.show {
+    z-index: 1001 !important;
+  }
+
+  body.menu-open main,
+  body.menu-open footer {
+    filter: blur(2px);
+    pointer-events: none;
+    user-select: none;
+  }
+}

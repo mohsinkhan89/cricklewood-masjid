@@ -24,3 +24,6 @@ references prompt 008:
 
 references prompt 009:  
     Add contact section with form and details in index.html; update styles in style.css and script.js
+
+references prompt 010:  
+    Implement mobile menu and sidebar for improved navigation

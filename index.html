@@ -50,20 +50,67 @@
 
       <nav class="nav-wrap" aria-label="Main navigation">
         <div class="container-custom nav-inner">
-          <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">
+          <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Open menu">
             <span></span><span></span><span></span>
           </button>
-          <ul id="main-menu" class="main-menu">
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#support">Donate</a></li>
-            <li><a href="#visit">Visit</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+
+          <div id="main-menu" class="mobile-menu-panel">
+            <div class="mobile-sidebar-head">
+              <a class="brand sidebar-brand" href="#home">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span><strong>Cricklewood Masjid</strong><small>& Islamic Centre</small></span>
+              </a>
+              <button class="menu-close" type="button" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <span class="sidebar-section-title">Menu</span>
+            <ul class="main-menu">
+              <li><a class="active" href="#home">Home</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#support">Donate</a></li>
+              <li><a href="#visit">Visit</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-sidebar-info">
+              <span class="sidebar-section-title">Prayer Time</span>
+              <div class="prayer-card sidebar-prayer" aria-label="Prayer information">
+                <div>
+                  <small><i class="fa-regular fa-clock"></i> Next Prayer</small>
+                  <strong>Dhuhr 1:14 PM</strong>
+                  <a href="#events">View Calendar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="date-box">
+                  <small>Wednesday</small>
+                  <strong>20</strong>
+                  <span>Aug 2025</span>
+                </div>
+              </div>
+
+              <span class="sidebar-section-title">Connect</span>
+              <a class="call sidebar-call" href="tel:02076503000" aria-label="Call us">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span><small>Call Us</small><strong>020 7650 3000</strong></span>
+              </a>
+
+              <div class="socials sidebar-socials" aria-label="Social links">
+                <a href="#contact" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#contact" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#contact" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#contact" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
           <a class="donate-pill btn-modern" href="#support"><lord-icon class="btn-lord-icon" src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover" colors="primary:#ffffff,secondary:#ffe1a3"></lord-icon><span>Donate</span></a>
+          <a class="brand mobile-brand" href="#home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span><strong>Cricklewood Masjid</strong><small>& Islamic Centre</small></span>
+          </a>
         </div>
+        <button class="mobile-menu-backdrop" type="button" aria-label="Close menu" hidden></button>
       </nav>
     </header>
 
@@ -340,20 +387,6 @@
     <script src="assets/js/script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
