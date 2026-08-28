@@ -4444,76 +4444,110 @@ input {
 }
 /* Compact prayer timing widget polish */
 .topbar {
-  min-height: 76px !important;
-  grid-template-columns: minmax(245px, 0.9fr) minmax(500px, 620px) minmax(245px, 0.8fr) !important;
+  min-height: 70px !important;
+  grid-template-columns: minmax(235px, 0.85fr) minmax(520px, 600px) minmax(350px, 0.8fr) !important;
+  align-items: center !important;
   gap: 18px !important;
 }
 
 .header-prayer-widget {
-  width: min(620px, 35vw) !important;
-  min-width: 500px !important;
-  padding: 7px 8px !important;
-  border-radius: 12px !important;
+  width: min(600px, 39vw) !important;
+  min-width: 520px !important;
+  padding: 5px 8px !important;
+  border-radius: 11px !important;
 }
 
-.prayer-widget-head {
+.header-prayer-widget .prayer-widget-head {
   gap: 10px !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 4px !important;
 }
 
-.prayer-widget-head small {
-  font-size: 10px !important;
-  line-height: 1.1 !important;
-}
-
-.prayer-widget-head strong {
-  font-size: 12px !important;
-  line-height: 1.15 !important;
-}
-
-.prayer-widget-head a {
-  font-size: 10px !important;
-}
-
-.prayer-times-list {
-  gap: 5px !important;
-}
-
-.prayer-time-item {
-  min-height: 46px !important;
-  padding: 5px 4px !important;
-  border-radius: 8px !important;
-  gap: 1px !important;
-}
-
-.prayer-time-item span {
-  font-size: 8.5px !important;
-}
-
-.prayer-time-item strong {
-  font-size: 14px !important;
+.header-prayer-widget .prayer-widget-head small {
+  font-size: 9px !important;
   line-height: 1 !important;
 }
 
-.prayer-time-item small {
-  font-size: 8px !important;
-  line-height: 1.1 !important;
+.header-prayer-widget .prayer-widget-head strong {
+  margin-top: 0 !important;
+  font-size: 11px !important;
+  line-height: 1.05 !important;
 }
 
-.prayer-time-item em {
-  top: 3px !important;
-  right: 4px !important;
-  padding: 1px 4px !important;
+.header-prayer-widget .prayer-widget-head a {
+  font-size: 9px !important;
+}
+
+.header-prayer-widget .prayer-times-list {
+  gap: 5px !important;
+}
+
+.header-prayer-widget .prayer-time-item {
+  min-height: 36px !important;
+  padding: 3px 4px !important;
+  border-radius: 8px !important;
+  gap: 0 !important;
+}
+
+.header-prayer-widget .prayer-time-item span {
+  font-size: 7.5px !important;
+  line-height: 1 !important;
+}
+
+.header-prayer-widget .prayer-time-item strong {
+  font-size: 13px !important;
+  line-height: 0.98 !important;
+}
+
+.header-prayer-widget .prayer-time-item small {
   font-size: 7px !important;
+  line-height: 1 !important;
+}
+
+.header-prayer-widget .prayer-time-item em {
+  top: 2px !important;
+  right: 3px !important;
+  padding: 1px 3px !important;
+  font-size: 6.5px !important;
+}
+
+.contact-social {
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 14px !important;
+  min-width: 0;
 }
 
 .contact-social .call {
-  max-width: 142px;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  min-width: 166px;
+  min-height: 46px;
+  padding: 6px 12px 6px 7px !important;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.contact-social .call i {
+  flex: 0 0 34px;
+  width: 34px !important;
+  height: 34px !important;
+}
+
+.contact-social .call span {
+  min-width: 0;
+}
+
+.contact-social .call small {
+  font-size: 10px !important;
+  line-height: 1.05 !important;
 }
 
 .contact-social .call strong {
-  line-height: 1.25;
-  overflow-wrap: anywhere;
+  font-size: 13px !important;
+  line-height: 1.1 !important;
+  overflow-wrap: normal;
+  white-space: nowrap;
 }
 
 @media (max-width: 1180px) and (min-width: 981px) {
