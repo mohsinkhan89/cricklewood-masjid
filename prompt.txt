@@ -81,3 +81,6 @@ references prompt 027:
 
 references prompt 028:
     update contact information in index.html
+
+references prompt 029:
+    update contact information and footer layout
