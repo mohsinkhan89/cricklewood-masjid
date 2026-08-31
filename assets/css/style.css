@@ -20,7 +20,8 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: #fff;
+  /* background: #fff; */
+  background: #eee;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 15px;
   line-height: 1.45;
@@ -1472,7 +1473,8 @@ time {
 .news-card time i,
 .site-footer p i {
   width: 25px;
-  color: var(--gold-dark);
+  /* color: var(--gold-dark); */
+  color: black;
 }
 
 .lord-service-icon {
@@ -3077,7 +3079,7 @@ input {
 
 .event-item p i {
   width: auto !important;
-  color: #b6780f;
+  /* color: #b6780f; */
   font-size: 12px;
 }
 
@@ -3260,7 +3262,7 @@ input {
   padding: 0 18px !important;
   gap: 10px;
   border-radius: 10px !important;
-  color: #fff !important;
+  /* color: #fff !important; */
 }
 
 .site-footer .footer-btn span:not(.footer-btn-icon) {
@@ -3629,7 +3631,7 @@ input {
   padding: 0 12px;
   border: 1px solid rgba(36, 220, 201, 0.18);
   border-radius: 8px;
-  color: #9a6509;
+  color: var(--gold);
   background: rgba(255, 255, 255, 0.76);
   font-size: 12px;
   font-weight: 900;
@@ -3684,7 +3686,7 @@ input {
   display: grid;
   place-items: center;
   border-radius: 8px;
-  color: #fff;
+  /* color: #fff; */
   background: linear-gradient(135deg, #24DCC9, #24DCC9);
   box-shadow: 0 10px 18px rgba(183, 122, 9, 0.18);
 }
@@ -4849,6 +4851,7 @@ input {
   flex: 0 0 34px;
   width: 34px !important;
   height: 34px !important;
+  color: black;
 }
 
 .contact-social .call span {
@@ -5559,7 +5562,7 @@ input {
   box-shadow: 0 22px 38px rgba(36, 220, 201, 0.3) !important;
 }
 
-.daily-prayer-card.active .daily-prayer-card-head span,
+/* .daily-prayer-card.active .daily-prayer-card-head span,
 .daily-prayer-card.active:hover .daily-prayer-card-head span,
 .daily-prayer-card.active:focus-within .daily-prayer-card-head span,
 .daily-prayer-card.active h3,
@@ -5572,7 +5575,7 @@ input {
 .daily-prayer-card.active:hover .daily-prayer-times strong,
 .daily-prayer-card.active:focus-within .daily-prayer-times strong {
   color: #fff !important;
-}
+} */
 
 .daily-prayer-card.active .daily-prayer-times div,
 .daily-prayer-card.active:hover .daily-prayer-times div,
@@ -6156,4 +6159,97 @@ input {
 .footer-bottom a,
 .site-footer .footer-bottom a:hover {
   color: #111317 !important;
+}
+
+/* Black text/icons on turquoise surfaces */
+.donation-box,
+.donation-box *,
+.gold-btn,
+.gold-btn *,
+.gold-btn::before,
+.gold-btn::after,
+.gold-btn:hover,
+.gold-btn:hover *,
+.donate-pill,
+.donate-pill *,
+.donate-pill::before,
+.donate-pill::after,
+.donate-pill:hover,
+.donate-pill:hover *,
+.outline-btn:hover,
+.outline-btn:hover *,
+.newsletter-box button,
+.newsletter-box button *,
+.newsletter-box button:hover,
+.newsletter-box button:hover *,
+.footer-btn,
+.footer-btn *,
+.footer-btn::before,
+.footer-btn::after,
+.footer-btn:hover,
+.footer-btn:hover *,
+.amount-grid button:hover,
+.amount-grid button.selected,
+.amount-grid button:hover *,
+.amount-grid button.selected *,
+.main-menu a.active,
+.main-menu a.active *,
+.main-menu a:hover,
+.main-menu a:hover *,
+.mobile-menu-panel .main-menu a.active,
+.mobile-menu-panel .main-menu a.active *,
+.mobile-menu-panel .main-menu a:hover,
+.mobile-menu-panel .main-menu a:hover *,
+.event-item time span,
+.events .section-title h2::before,
+.daily-prayers .daily-prayers-head h2::before,
+.prayer-time-item.active,
+.prayer-time-item.active *,
+.prayer-table-column.active,
+.prayer-table-column.active *,
+.daily-prayer-card.active,
+.daily-prayer-card.active *,
+.daily-prayer-card.active:hover,
+.daily-prayer-card.active:hover *,
+.daily-prayer-card.active:focus-within,
+.daily-prayer-card.active:focus-within *,
+.header-next-prayer,
+.header-next-prayer *,
+.header-next-name small,
+.header-next-begins small,
+.header-next-main em,
+.header-next-name b,
+.header-next-main strong,
+.header-next-begins b,
+.call:hover i,
+.contact-detail-list a:hover i,
+.slider-btn:hover,
+.slider-btn:hover *,
+.back-to-top,
+.back-to-top * {
+  color: #000 !important;
+}
+
+.socials a:hover *,
+.socials a:hover,
+.footer-socials a:hover *,
+.footer-socials a:hover {
+  color: var(--gold) !important;
+}
+
+.donation-box .outline-btn,
+.donation-box .outline-btn *,
+.donation-box .outline-btn:hover,
+.donation-box .outline-btn:hover * {
+  color: #000 !important;
+  border-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+.gold-btn lord-icon,
+.donate-pill lord-icon,
+.outline-btn lord-icon,
+.newsletter-box button lord-icon,
+.footer-btn lord-icon,
+.quick-panels lord-icon {
+  color: #000 !important;
 }

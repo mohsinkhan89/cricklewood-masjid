@@ -87,3 +87,6 @@ references prompt 029:
 
 references prompt 030:
     Update button icon colors to black for better visibility and consistency across the site
+
+references prompt 031:
+    update background color and icon colors for improved visibility
