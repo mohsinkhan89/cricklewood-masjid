@@ -2125,7 +2125,7 @@ time {
 }
 
 .hero-left h1 span {
-  color: #c98b16;
+  color: var(--gold);
   text-shadow: 0 2px 12px rgba(255, 255, 255, 0.28);
 }
 
@@ -5894,7 +5894,11 @@ input {
   }
 
   .hero-left {
-    max-width: 500px !important;
+    max-width: 650px !important;
+    width: 650px;
+  }
+  .hero-left h1 {
+    font-size: 45px;
   }
 
   .hero-right {
@@ -6150,7 +6154,6 @@ input {
   border-color: rgba(36, 220, 201, 0.34) !important;
 }
 
-.hero-left h1 span,
 .section-title a,
 .services a,
 .prayer-card small,

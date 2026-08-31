@@ -90,3 +90,6 @@ references prompt 030:
 
 references prompt 031:
     update background color and icon colors for improved visibility
+
+references prompt 032:
+    Add new banner image for slider
