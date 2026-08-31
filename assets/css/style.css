@@ -1,6 +1,6 @@
 :root {
-  --gold: #d79d25;
-  --gold-dark: #b97a09;
+  --gold: #24DCC9;
+  --gold-dark: #24DCC9;
   --ink: #111317;
   --muted: #5a5f66;
   --line: #e5e2dc;
@@ -239,7 +239,7 @@ input {
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
-  box-shadow: 0 8px 18px rgba(201, 139, 22, 0.28);
+  box-shadow: 0 8px 18px rgba(36, 220, 201, 0.28);
 }
 
 .menu-toggle {
@@ -280,7 +280,7 @@ input {
   pointer-events: none;
   transition: opacity 0.35s ease;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0 24%, rgba(255, 255, 255, 0.72) 37%, rgba(214, 157, 37, 0.9) 66%, rgba(215, 157, 37, 0.96) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0 24%, rgba(255, 255, 255, 0.72) 37%, rgba(36, 220, 201, 0.9) 66%, rgba(36, 220, 201, 0.96) 100%),
     var(--hero-img) center / cover no-repeat;
 }
 
@@ -366,8 +366,8 @@ input {
   border: 0;
   border-radius: 999px;
   color: #fff;
-  background: linear-gradient(135deg, #e1ad39, var(--gold-dark));
-  box-shadow: 0 12px 22px rgba(197, 135, 18, 0.28);
+  background: linear-gradient(135deg, #24DCC9, var(--gold-dark));
+  box-shadow: 0 12px 22px rgba(36, 220, 201, 0.28);
   font-weight: 800;
   cursor: pointer;
 }
@@ -687,7 +687,7 @@ time {
 .donation-box {
   color: #fff;
   background:
-    linear-gradient(145deg, rgba(221, 168, 54, 0.95), rgba(197, 136, 21, 0.96)),
+    linear-gradient(145deg, rgba(36, 220, 201, 0.95), rgba(36, 220, 201, 0.96)),
     url("../img/pattern.svg") right bottom / 260px no-repeat;
 }
 
@@ -1124,7 +1124,7 @@ time {
     gap: 28px;
     padding: 48px 0 72px;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.93) 0 45%, rgba(214, 157, 37, 0.9) 72% 100%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.93) 0 45%, rgba(36, 220, 201, 0.9) 72% 100%),
       var(--hero-img) center / cover no-repeat;
   }
 
@@ -1264,7 +1264,7 @@ time {
 
 .brand:hover .brand-mark {
   transform: rotate(18deg) scale(1.04);
-  filter: drop-shadow(0 8px 16px rgba(215, 157, 37, 0.28));
+  filter: drop-shadow(0 8px 16px rgba(36, 220, 201, 0.28));
 }
 
 .prayer-card,
@@ -1452,7 +1452,7 @@ time {
 
 .event-item:hover {
   transform: translateX(8px);
-  border-color: rgba(215, 157, 37, 0.5);
+  border-color: rgba(36, 220, 201, 0.5);
 }
 
 .event-item:hover time {
@@ -1478,7 +1478,7 @@ time {
 .lord-service-icon {
   width: 64px;
   margin-bottom: 12px;
-  filter: drop-shadow(0 8px 14px rgba(215, 157, 37, 0.16));
+  filter: drop-shadow(0 8px 14px rgba(36, 220, 201, 0.16));
   transition: transform 0.32s ease;
   position: relative;
   aspect-ratio: 1;
@@ -1501,7 +1501,7 @@ time {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(215, 157, 37, 0.36), rgba(0, 0, 0, 0.12));
+  background: linear-gradient(135deg, rgba(36, 220, 201, 0.36), rgba(0, 0, 0, 0.12));
   opacity: 0;
   transition: opacity 0.32s ease;
 }
@@ -1528,7 +1528,7 @@ time {
 .amount-grid input:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 4px rgba(215, 157, 37, 0.16);
+  box-shadow: 0 0 0 4px rgba(36, 220, 201, 0.16);
 }
 
 .reveal {
@@ -1587,10 +1587,10 @@ time {
 
 @keyframes phonePulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(215, 157, 37, 0.28);
+    box-shadow: 0 0 0 0 rgba(36, 220, 201, 0.28);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(215, 157, 37, 0);
+    box-shadow: 0 0 0 8px rgba(36, 220, 201, 0);
   }
 }
 
@@ -1769,7 +1769,7 @@ time {
   transform: scale(1.035);
   transition: opacity 0.9s ease, transform 1.25s ease;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 31%, rgba(255, 255, 255, 0.42) 48%, rgba(215, 157, 37, 0.72) 68%, rgba(198, 139, 31, 0.9) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 31%, rgba(255, 255, 255, 0.42) 48%, rgba(36, 220, 201, 0.72) 68%, rgba(36, 220, 201, 0.9) 100%),
     var(--hero-img) center / cover no-repeat;
 }
 
@@ -1878,7 +1878,7 @@ time {
 @media (max-width: 980px) {
   .hero-slide {
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.78) 43%, rgba(215, 157, 37, 0.86) 100%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.78) 43%, rgba(36, 220, 201, 0.86) 100%),
       var(--hero-img) center / cover no-repeat;
   }
 
@@ -1934,7 +1934,7 @@ time {
 
 @media (max-width: 980px) {
   .hero-slide::after {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.72) 48%, rgba(215, 157, 37, 0.88) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.72) 48%, rgba(36, 220, 201, 0.88) 100%);
   }
 }
 
@@ -1948,7 +1948,7 @@ time {
 }
 
 .hero-slide::after {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.78) 34%, rgba(255, 255, 255, 0.18) 52%, rgba(215, 157, 37, 0.72) 74%, rgba(211, 151, 30, 0.9) 100%) !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.78) 34%, rgba(255, 255, 255, 0.18) 52%, rgba(36, 220, 201, 0.72) 74%, rgba(36, 220, 201, 0.9) 100%) !important;
 }
 
 .hero-left {
@@ -2027,7 +2027,7 @@ time {
 
 @media (max-width: 980px) {
   .hero-slide::after {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.76) 48%, rgba(215, 157, 37, 0.9) 100%) !important;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.76) 48%, rgba(36, 220, 201, 0.9) 100%) !important;
   }
 
   .hero-left,
@@ -2153,7 +2153,7 @@ time {
 .hero .gold-btn {
   min-height: 50px;
   padding: 0 28px;
-  box-shadow: 0 12px 20px rgba(177, 116, 9, 0.22);
+  box-shadow: 0 12px 20px rgba(36, 220, 201, 0.22);
 }
 
 .slider-btn {
@@ -2228,16 +2228,16 @@ time {
 .donate-pill,
 .footer-btn {
   color: #fff;
-  background: linear-gradient(135deg, #dba63a 0%, #bd7e12 100%) !important;
+  background: linear-gradient(135deg, #24DCC9 0%, #24DCC9 100%) !important;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 10px 22px rgba(178, 112, 8, 0.22);
+  box-shadow: 0 10px 22px rgba(36, 220, 201, 0.22);
 }
 
 .gold-btn:hover,
 .donate-pill:hover,
 .footer-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 28px rgba(178, 112, 8, 0.28);
+  box-shadow: 0 16px 28px rgba(36, 220, 201, 0.28);
 }
 
 .outline-btn,
@@ -2260,7 +2260,7 @@ time {
 }
 
 .amount-grid button {
-  color: #9d650c;
+  color: #111317;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.62);
 }
@@ -2286,14 +2286,14 @@ time {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(215, 157, 37, 0.12), transparent 38%, rgba(215, 157, 37, 0.1));
+  background: linear-gradient(90deg, rgba(36, 220, 201, 0.12), transparent 38%, rgba(36, 220, 201, 0.1));
   pointer-events: none;
 }
 
 .footer-glow {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(215, 157, 37, 0.14), transparent 34%);
+  background: linear-gradient(180deg, rgba(36, 220, 201, 0.14), transparent 34%);
   pointer-events: none;
 }
 
@@ -2391,7 +2391,7 @@ time {
   width: 6px;
   height: 6px;
   border-radius: 2px;
-  background: rgba(215, 157, 37, 0.75);
+  background: rgba(36, 220, 201, 0.75);
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
@@ -2445,7 +2445,7 @@ time {
   place-items: center;
   border-radius: 7px;
   color: #fff !important;
-  background: rgba(215, 157, 37, 0.22);
+  background: rgba(36, 220, 201, 0.22);
 }
 
 .footer-socials {
@@ -2525,7 +2525,7 @@ time {
 .site-header {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 241, 0.96));
-  border-bottom: 1px solid rgba(215, 157, 37, 0.18);
+  border-bottom: 1px solid rgba(36, 220, 201, 0.18);
   box-shadow: 0 12px 30px rgba(31, 26, 17, 0.08);
 }
 
@@ -2554,7 +2554,7 @@ time {
 .brand-mark {
   width: 58px;
   height: 58px;
-  filter: drop-shadow(0 8px 18px rgba(215, 157, 37, 0.18));
+  filter: drop-shadow(0 8px 18px rgba(36, 220, 201, 0.18));
 }
 
 .brand strong {
@@ -2573,7 +2573,7 @@ time {
 .prayer-card {
   min-width: 286px;
   grid-template-columns: 1fr 92px;
-  border: 1px solid rgba(215, 157, 37, 0.38);
+  border: 1px solid rgba(36, 220, 201, 0.38);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 10px 24px rgba(36, 28, 14, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -2588,7 +2588,7 @@ time {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #a86e0d;
+  color: #111317;
   letter-spacing: 0;
 }
 
@@ -2612,8 +2612,8 @@ time {
 }
 
 .date-box {
-  background: linear-gradient(180deg, rgba(215, 157, 37, 0.12), rgba(255, 255, 255, 0.4));
-  border-left: 1px solid rgba(215, 157, 37, 0.24);
+  background: linear-gradient(180deg, rgba(36, 220, 201, 0.12), rgba(255, 255, 255, 0.4));
+  border-left: 1px solid rgba(36, 220, 201, 0.24);
 }
 
 .date-box strong {
@@ -2627,7 +2627,7 @@ time {
 
 .call {
   padding: 8px 12px 8px 8px;
-  border: 1px solid rgba(215, 157, 37, 0.16);
+  border: 1px solid rgba(36, 220, 201, 0.16);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.62);
 }
@@ -2641,7 +2641,7 @@ time {
   width: 36px;
   height: 36px;
   color: #fff;
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
 }
 
 .call small {
@@ -2660,16 +2660,16 @@ time {
   border-radius: 10px;
   color: #1b1b1b;
   background: rgba(255, 255, 255, 0.76);
-  border: 1px solid rgba(215, 157, 37, 0.18);
+  border: 1px solid rgba(36, 220, 201, 0.18);
 }
 
 .socials a:hover {
   color: #fff;
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
 }
 
 .nav-wrap {
-  border-top: 1px solid rgba(215, 157, 37, 0.12);
+  border-top: 1px solid rgba(36, 220, 201, 0.12);
   background: rgba(255, 255, 255, 0.64);
 }
 
@@ -2682,7 +2682,7 @@ time {
 .main-menu {
   gap: 4px;
   padding: 6px;
-  border: 1px solid rgba(215, 157, 37, 0.14);
+  border: 1px solid rgba(36, 220, 201, 0.14);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.78);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -2705,7 +2705,7 @@ time {
 .main-menu a.active,
 .main-menu a:hover {
   color: #fff;
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
   box-shadow: 0 8px 16px rgba(188, 126, 18, 0.2);
 }
 
@@ -2723,7 +2723,7 @@ time {
 .menu-toggle {
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.76);
-  border: 1px solid rgba(215, 157, 37, 0.2);
+  border: 1px solid rgba(36, 220, 201, 0.2);
 }
 
 .menu-toggle:hover {
@@ -2825,7 +2825,7 @@ input {
   display: grid;
   gap: 6px;
   padding: 10px;
-  border: 1px solid rgba(215, 157, 37, 0.18);
+  border: 1px solid rgba(36, 220, 201, 0.18);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 18px 40px rgba(24, 21, 15, 0.16);
@@ -2844,8 +2844,8 @@ input {
   top: -7px;
   width: 12px;
   height: 12px;
-  border-left: 1px solid rgba(215, 157, 37, 0.18);
-  border-top: 1px solid rgba(215, 157, 37, 0.18);
+  border-left: 1px solid rgba(36, 220, 201, 0.18);
+  border-top: 1px solid rgba(36, 220, 201, 0.18);
   background: rgba(255, 255, 255, 0.96);
   transform: rotate(45deg);
 }
@@ -2885,7 +2885,7 @@ input {
 
 .dropdown-menu a:hover {
   color: #fff !important;
-  background: linear-gradient(135deg, #dba63a, #bd7e12) !important;
+  background: linear-gradient(135deg, #24DCC9, #24DCC9) !important;
   transform: translateX(3px);
 }
 
@@ -2896,7 +2896,7 @@ input {
 .has-dropdown:hover > a,
 .has-dropdown:focus-within > a {
   color: #fff;
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
   box-shadow: 0 8px 16px rgba(188, 126, 18, 0.2);
 }
 
@@ -2947,7 +2947,7 @@ input {
     linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 248, 237, 0.86)),
     url("../img/pattern.svg") right -80px top -80px / 280px no-repeat;
   box-shadow: 0 16px 42px rgba(24, 21, 15, 0.1);
-  border: 1px solid rgba(215, 157, 37, 0.14);
+  border: 1px solid rgba(36, 220, 201, 0.14);
 }
 
 .events::before {
@@ -2958,7 +2958,7 @@ input {
   bottom: 24px;
   width: 4px;
   border-radius: 0 99px 99px 0;
-  background: linear-gradient(180deg, #dba63a, #bd7e12);
+  background: linear-gradient(180deg, #24DCC9, #24DCC9);
 }
 
 .events .section-title {
@@ -2979,7 +2979,7 @@ input {
   place-items: center;
   border-radius: 10px;
   color: #fff;
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
   font-family: "Font Awesome 6 Free";
   font-size: 14px;
   font-weight: 900;
@@ -2995,7 +2995,7 @@ input {
   grid-template-columns: 64px 1fr;
   gap: 16px;
   padding: 14px;
-  border: 1px solid rgba(215, 157, 37, 0.12) !important;
+  border: 1px solid rgba(36, 220, 201, 0.12) !important;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 7px 18px rgba(24, 21, 15, 0.05);
@@ -3006,7 +3006,7 @@ input {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(215, 157, 37, 0.11), transparent 48%);
+  background: linear-gradient(135deg, rgba(36, 220, 201, 0.11), transparent 48%);
   opacity: 0;
   transition: opacity 0.28s ease;
   pointer-events: none;
@@ -3014,7 +3014,7 @@ input {
 
 .event-item:hover {
   transform: translateY(-4px) !important;
-  border-color: rgba(215, 157, 37, 0.36) !important;
+  border-color: rgba(36, 220, 201, 0.36) !important;
   box-shadow: 0 15px 30px rgba(24, 21, 15, 0.12);
 }
 
@@ -3033,7 +3033,7 @@ input {
 
 .event-item time span {
   padding: 6px 0;
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
   font-weight: 900;
 }
 
@@ -3096,22 +3096,22 @@ input {
   position: absolute;
   inset: -6px;
   border-radius: inherit;
-  border: 2px solid rgba(215, 157, 37, 0.42);
+  border: 2px solid rgba(36, 220, 201, 0.42);
   animation: callPulseOuter 1.9s ease-out infinite;
 }
 
 @keyframes callPulseRing {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(215, 157, 37, 0.42);
+    box-shadow: 0 0 0 0 rgba(36, 220, 201, 0.42);
   }
   55% {
     transform: scale(1.04);
-    box-shadow: 0 0 0 10px rgba(215, 157, 37, 0);
+    box-shadow: 0 0 0 10px rgba(36, 220, 201, 0);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(215, 157, 37, 0);
+    box-shadow: 0 0 0 0 rgba(36, 220, 201, 0);
   }
 }
 
@@ -3154,7 +3154,7 @@ input {
   overflow: hidden;
   margin-top: 6px;
   margin-bottom: 24px;
-  border: 1px solid rgba(215, 157, 37, 0.12);
+  border: 1px solid rgba(36, 220, 201, 0.12);
   border-radius: 8px !important;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.94), rgba(255, 247, 235, 0.92)),
@@ -3295,8 +3295,8 @@ input {
 }
 
 .site-footer .footer-btn-light .footer-btn-icon {
-  color: #b97a09;
-  background: rgba(215, 157, 37, 0.13);
+  color: #24DCC9;
+  background: rgba(36, 220, 201, 0.13);
 }
 
 .site-footer .footer-btn-light:hover {
@@ -3320,7 +3320,7 @@ input {
   color: #fff !important;
   background: transparent !important;
   border-color: var(--gold) !important;
-  box-shadow: 0 8px 18px rgba(215, 157, 37, 0.18) !important;
+  box-shadow: 0 8px 18px rgba(36, 220, 201, 0.18) !important;
 }
 
 /* Section anchors and back-to-top */
@@ -3347,7 +3347,7 @@ input {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   color: #fff;
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
   box-shadow: 0 14px 28px rgba(120, 74, 4, 0.24);
   cursor: pointer;
   opacity: 0;
@@ -3404,7 +3404,7 @@ input {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(145deg, rgba(221, 168, 54, 0.94), rgba(186, 119, 12, 0.96)),
+    linear-gradient(145deg, rgba(36, 220, 201, 0.94), rgba(36, 220, 201, 0.96)),
     url("../img/shape/01.png") right -18px bottom -28px / 240px no-repeat !important;
 }
 
@@ -3423,7 +3423,7 @@ input {
 
 /* Reliable visible donation shape image */
 .donation-box {
-  background: linear-gradient(145deg, rgba(221, 168, 54, 0.96), rgba(186, 119, 12, 0.96)) !important;
+  background: linear-gradient(145deg, rgba(36, 220, 201, 0.96), rgba(36, 220, 201, 0.96)) !important;
 }
 
 .donation-shape-img {
@@ -3492,7 +3492,7 @@ input {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(215, 157, 37, 0.08), transparent 42%, rgba(215, 157, 37, 0.06));
+  background: linear-gradient(90deg, rgba(36, 220, 201, 0.08), transparent 42%, rgba(36, 220, 201, 0.06));
   pointer-events: none;
 }
 
@@ -3504,7 +3504,7 @@ input {
 
 .footer-contact-card {
   background: rgba(255, 255, 255, 0.045) !important;
-  border-color: rgba(215, 157, 37, 0.16) !important;
+  border-color: rgba(36, 220, 201, 0.16) !important;
 }
 
 .footer-links a::before {
@@ -3541,7 +3541,7 @@ input {
   width: min(1320px, calc(100% - 36px));
   margin-inline: auto;
   padding: 16px 0 18px !important;
-  border-top: 1px solid rgba(215, 157, 37, 0.22) !important;
+  border-top: 1px solid rgba(36, 220, 201, 0.22) !important;
   color: rgba(255, 255, 255, 0.86) !important;
   background: transparent !important;
   opacity: 1 !important;
@@ -3562,7 +3562,7 @@ input {
 }
 
 .site-footer .footer-bottom a {
-  color: #dba63a !important;
+  color: #24DCC9 !important;
   font-weight: 900;
   text-decoration: none;
 }
@@ -3592,7 +3592,7 @@ input {
     linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 235, 0.9)),
     url("../img/pattern.svg") left -90px top -120px / 360px no-repeat,
     #fff8ec;
-  border-top: 1px solid rgba(215, 157, 37, 0.14);
+  border-top: 1px solid rgba(36, 220, 201, 0.14);
 }
 
 .contact-section::before {
@@ -3627,7 +3627,7 @@ input {
   min-height: 34px;
   margin-bottom: 14px;
   padding: 0 12px;
-  border: 1px solid rgba(215, 157, 37, 0.18);
+  border: 1px solid rgba(36, 220, 201, 0.18);
   border-radius: 8px;
   color: #9a6509;
   background: rgba(255, 255, 255, 0.76);
@@ -3666,7 +3666,7 @@ input {
   gap: 12px;
   min-height: 72px;
   padding: 12px 14px;
-  border: 1px solid rgba(215, 157, 37, 0.14);
+  border: 1px solid rgba(36, 220, 201, 0.14);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 10px 24px rgba(24, 21, 15, 0.06);
@@ -3674,7 +3674,7 @@ input {
 
 .contact-detail-list a:hover {
   transform: translateY(-3px);
-  border-color: rgba(215, 157, 37, 0.34);
+  border-color: rgba(36, 220, 201, 0.34);
   box-shadow: 0 16px 30px rgba(24, 21, 15, 0.1);
 }
 
@@ -3685,7 +3685,7 @@ input {
   place-items: center;
   border-radius: 8px;
   color: #fff;
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
   box-shadow: 0 10px 18px rgba(183, 122, 9, 0.18);
 }
 
@@ -3714,7 +3714,7 @@ input {
   display: grid;
   gap: 14px;
   padding: 28px;
-  border: 1px solid rgba(215, 157, 37, 0.16);
+  border: 1px solid rgba(36, 220, 201, 0.16);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 18px 42px rgba(24, 21, 15, 0.11);
@@ -3766,9 +3766,9 @@ input {
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
-  border-color: rgba(215, 157, 37, 0.75);
+  border-color: rgba(36, 220, 201, 0.75);
   background: #fffdfa;
-  box-shadow: 0 0 0 4px rgba(215, 157, 37, 0.12);
+  box-shadow: 0 0 0 4px rgba(36, 220, 201, 0.12);
 }
 
 .contact-form ::placeholder {
@@ -3936,7 +3936,7 @@ input {
     gap: 14px;
     padding: 16px;
     overflow-y: auto;
-    border-left: 1px solid rgba(215, 157, 37, 0.18);
+    border-left: 1px solid rgba(36, 220, 201, 0.18);
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 248, 237, 0.96)),
       url("../img/pattern.svg") right -90px bottom -80px / 250px no-repeat;
@@ -3967,7 +3967,7 @@ input {
     justify-content: space-between;
     gap: 12px;
     padding-bottom: 12px;
-    border-bottom: 1px solid rgba(215, 157, 37, 0.16);
+    border-bottom: 1px solid rgba(36, 220, 201, 0.16);
   }
 
   .sidebar-brand {
@@ -3998,7 +3998,7 @@ input {
     display: grid;
     place-items: center;
     flex: 0 0 auto;
-    border: 1px solid rgba(215, 157, 37, 0.18);
+    border: 1px solid rgba(36, 220, 201, 0.18);
     border-radius: 10px;
     color: #171717;
     background: #fff;
@@ -4051,7 +4051,7 @@ input {
     min-height: 42px;
     justify-content: space-between;
     padding: 0 13px !important;
-    border: 1px solid rgba(215, 157, 37, 0.13);
+    border: 1px solid rgba(36, 220, 201, 0.13);
     border-radius: 9px !important;
     background: rgba(255, 255, 255, 0.76);
     color: #1d1f22;
@@ -4061,7 +4061,7 @@ input {
   .mobile-menu-panel .main-menu a.active,
   .mobile-menu-panel .main-menu a:hover {
     color: #fff !important;
-    background: linear-gradient(135deg, #dba63a, #bd7e12) !important;
+    background: linear-gradient(135deg, #24DCC9, #24DCC9) !important;
   }
 
   .mobile-sidebar-info {
@@ -4275,7 +4275,7 @@ input {
 .prayer-times-widget {
   min-width: 620px;
   padding: 10px;
-  border: 1px solid rgba(215, 157, 37, 0.28);
+  border: 1px solid rgba(36, 220, 201, 0.28);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.86);
   box-shadow: 0 10px 24px rgba(36, 28, 14, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.84);
@@ -4304,7 +4304,7 @@ input {
 }
 
 .prayer-widget-head small {
-  color: #a86e0d;
+  color: #111317;
   font-size: 11px;
   font-weight: 900;
   text-transform: uppercase;
@@ -4340,7 +4340,7 @@ input {
   gap: 2px;
   padding: 7px 5px;
   overflow: hidden;
-  border: 1px solid rgba(215, 157, 37, 0.13);
+  border: 1px solid rgba(36, 220, 201, 0.13);
   border-radius: 9px;
   background: rgba(255, 250, 242, 0.82);
   text-align: center;
@@ -4390,7 +4390,7 @@ input {
 
 .prayer-time-item.active {
   border-color: rgba(255, 255, 255, 0.28);
-  background: linear-gradient(135deg, #dba63a, #bd7e12);
+  background: linear-gradient(135deg, #24DCC9, #24DCC9);
   box-shadow: 0 10px 18px rgba(183, 122, 9, 0.2);
 }
 
@@ -4469,7 +4469,7 @@ input {
 }
 
 .prayer-times-widget {
-  border: 1px solid rgba(215, 157, 37, 0.32) !important;
+  border: 1px solid rgba(36, 220, 201, 0.32) !important;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 244, 237, 0.92)) !important;
   box-shadow: 0 14px 34px rgba(24, 21, 15, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
@@ -4498,7 +4498,7 @@ input {
   max-width: 100%;
   padding: 2px 11px;
   overflow: hidden;
-  border: 1px solid rgba(215, 157, 37, 0.16);
+  border: 1px solid rgba(36, 220, 201, 0.16);
   border-radius: 999px;
   color: #6f665b !important;
   background: rgba(255, 253, 248, 0.76);
@@ -4517,7 +4517,7 @@ input {
   border-radius: 50%;
   color: transparent;
   background: var(--gold);
-  box-shadow: 0 0 0 3px rgba(215, 157, 37, 0.12);
+  box-shadow: 0 0 0 3px rgba(36, 220, 201, 0.12);
 }
 
 .header-prayer-widget .prayer-times-list {
@@ -4535,7 +4535,7 @@ input {
   border-radius: 10px;
   color: #fff;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  box-shadow: 0 10px 18px rgba(185, 122, 9, 0.18);
+  box-shadow: 0 10px 18px rgba(36, 220, 201, 0.18);
 }
 
 .header-next-prayer span {
@@ -4577,7 +4577,7 @@ input {
   align-items: center;
   min-height: 43px;
   padding: 7px 9px;
-  border: 1px solid rgba(215, 157, 37, 0.22);
+  border: 1px solid rgba(36, 220, 201, 0.22);
   border-radius: 9px;
   color: var(--gold-dark);
   background: rgba(255, 250, 242, 0.78);
@@ -4607,7 +4607,7 @@ input {
   justify-items: center;
   min-height: 43px;
   padding: 4px 5px;
-  border: 1px solid rgba(215, 157, 37, 0.16);
+  border: 1px solid rgba(36, 220, 201, 0.16);
   border-radius: 9px;
   color: var(--ink);
   background: rgba(255, 253, 250, 0.72);
@@ -4642,7 +4642,7 @@ input {
   border-radius: 999px;
   color: var(--gold-dark);
   background: #fff7df;
-  box-shadow: 0 0 0 1px rgba(215, 157, 37, 0.26);
+  box-shadow: 0 0 0 1px rgba(36, 220, 201, 0.26);
   font-size: 6.5px;
   line-height: 1.2;
   font-style: normal;
@@ -4653,7 +4653,7 @@ input {
 .prayer-table-column.active {
   border-color: rgba(255, 255, 255, 0.38);
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  box-shadow: 0 10px 18px rgba(185, 122, 9, 0.18);
+  box-shadow: 0 10px 18px rgba(36, 220, 201, 0.18);
 }
 
 .prayer-table-column.active .prayer-name,
@@ -4667,7 +4667,7 @@ input {
   padding: 42px 0 46px;
   overflow: hidden;
   background: linear-gradient(180deg, #fffaf1 0%, #fff 100%);
-  border-bottom: 1px solid rgba(215, 157, 37, 0.12);
+  border-bottom: 1px solid rgba(36, 220, 201, 0.12);
 }
 
 .daily-prayers::before {
@@ -4675,7 +4675,7 @@ input {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(215, 157, 37, 0.08), transparent 26%, transparent 74%, rgba(215, 157, 37, 0.08));
+  background: linear-gradient(90deg, rgba(36, 220, 201, 0.08), transparent 26%, transparent 74%, rgba(36, 220, 201, 0.08));
 }
 
 .daily-prayers > .container-custom {
@@ -4716,7 +4716,7 @@ input {
   justify-content: center;
   margin: 0;
   padding: 8px 14px;
-  border: 1px solid rgba(215, 157, 37, 0.2);
+  border: 1px solid rgba(36, 220, 201, 0.2);
   border-radius: 999px;
   color: #6f665b;
   background: rgba(255, 255, 255, 0.76);
@@ -4749,7 +4749,7 @@ input {
   justify-content: space-between;
   gap: 18px;
   padding: 18px;
-  border: 1px solid rgba(215, 157, 37, 0.17);
+  border: 1px solid rgba(36, 220, 201, 0.17);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 12px 26px rgba(24, 21, 15, 0.07);
@@ -4784,7 +4784,7 @@ input {
   justify-content: space-between;
   gap: 10px;
   padding-top: 10px;
-  border-top: 1px solid rgba(215, 157, 37, 0.16);
+  border-top: 1px solid rgba(36, 220, 201, 0.16);
 }
 
 .daily-prayer-times span {
@@ -4805,7 +4805,7 @@ input {
   border-color: rgba(255, 255, 255, 0.36);
   color: #fff;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  box-shadow: 0 18px 34px rgba(185, 122, 9, 0.24);
+  box-shadow: 0 18px 34px rgba(36, 220, 201, 0.24);
 }
 
 .daily-prayer-card.active .daily-prayer-card-head span,
@@ -4912,7 +4912,7 @@ input {
     flex-wrap: wrap;
     gap: 5px 0;
     padding: 5px 8px;
-    border: 1px solid rgba(215, 157, 37, 0.16);
+    border: 1px solid rgba(36, 220, 201, 0.16);
     border-radius: 9px;
     color: #7b7163;
     background: rgba(255, 253, 248, 0.74);
@@ -4955,7 +4955,7 @@ input {
     justify-items: stretch;
     min-height: 48px;
     padding: 8px 10px;
-    border-color: rgba(215, 157, 37, 0.18);
+    border-color: rgba(36, 220, 201, 0.18);
     background: rgba(255, 250, 242, 0.82);
   }
 
@@ -5025,8 +5025,8 @@ input {
 /* Polished desktop navigation tabs */
 @media (min-width: 981px) {
   .nav-wrap {
-    border-top: 1px solid rgba(215, 157, 37, 0.1) !important;
-    border-bottom: 1px solid rgba(215, 157, 37, 0.1);
+    border-top: 1px solid rgba(36, 220, 201, 0.1) !important;
+    border-bottom: 1px solid rgba(36, 220, 201, 0.1);
     background: rgba(255, 255, 255, 0.86) !important;
     box-shadow: 0 8px 22px rgba(24, 21, 15, 0.04);
   }
@@ -5053,7 +5053,7 @@ input {
     margin: 0 auto;
     padding: 5px !important;
     overflow: hidden;
-    border: 1px solid rgba(215, 157, 37, 0.18) !important;
+    border: 1px solid rgba(36, 220, 201, 0.18) !important;
     border-radius: 12px !important;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 244, 237, 0.78)) !important;
     box-shadow: 0 12px 26px rgba(24, 21, 15, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
@@ -5080,7 +5080,7 @@ input {
 
   .nav-inner .main-menu a:hover {
     color: var(--gold-dark) !important;
-    border-color: rgba(215, 157, 37, 0.22);
+    border-color: rgba(36, 220, 201, 0.22);
     background: rgba(255, 250, 242, 0.9) !important;
     box-shadow: none !important;
     transform: none;
@@ -5090,7 +5090,7 @@ input {
     color: #fff !important;
     border-color: rgba(255, 255, 255, 0.28);
     background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
-    box-shadow: 0 8px 18px rgba(185, 122, 9, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+    box-shadow: 0 8px 18px rgba(36, 220, 201, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
   }
 
   .nav-inner > .donate-pill {
@@ -5231,7 +5231,7 @@ input {
   .header-prayer-widget .prayer-widget-head strong {
     min-height: 17px;
     padding: 2px 8px;
-    border-color: rgba(215, 157, 37, 0.18);
+    border-color: rgba(36, 220, 201, 0.18);
     font-size: 9px !important;
     line-height: 1 !important;
     letter-spacing: 0 !important;
@@ -5250,7 +5250,7 @@ input {
     padding: 6px 8px !important;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 9px !important;
-    box-shadow: 0 8px 16px rgba(185, 122, 9, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+    box-shadow: 0 8px 16px rgba(36, 220, 201, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
   }
 
   .header-next-prayer span,
@@ -5385,7 +5385,7 @@ input {
 
 .daily-prayer-card:hover {
   transform: translateY(-7px);
-  border-color: rgba(215, 157, 37, 0.42);
+  border-color: rgba(36, 220, 201, 0.42);
   background: #fffdfa;
   box-shadow: 0 18px 34px rgba(24, 21, 15, 0.12);
 }
@@ -5403,7 +5403,7 @@ input {
 
 .daily-prayer-card.active:hover {
   transform: translateY(-7px);
-  box-shadow: 0 22px 38px rgba(185, 122, 9, 0.3);
+  box-shadow: 0 22px 38px rgba(36, 220, 201, 0.3);
 }
 
 .daily-prayer-card.active:hover .daily-prayer-card-head span,
@@ -5445,7 +5445,7 @@ input {
     min-height: 22px;
     padding: 4px 10px;
     overflow: visible;
-    border-color: rgba(215, 157, 37, 0.2);
+    border-color: rgba(36, 220, 201, 0.2);
     color: #5d554b !important;
     background: rgba(255, 255, 255, 0.72);
     font-size: 11px !important;
@@ -5459,7 +5459,7 @@ input {
     height: 5px;
     margin: 0 8px;
     background: var(--gold);
-    box-shadow: 0 0 0 3px rgba(215, 157, 37, 0.12);
+    box-shadow: 0 0 0 3px rgba(36, 220, 201, 0.12);
   }
 
   .header-next-prayer {
@@ -5468,8 +5468,8 @@ input {
     gap: 9px !important;
     padding: 8px 10px !important;
     border-radius: 11px !important;
-    background: linear-gradient(135deg, #dca53a 0%, #c88916 48%, #b87408 100%) !important;
-    box-shadow: 0 12px 20px rgba(185, 122, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+    background: linear-gradient(135deg, #24DCC9 0%, #24DCC9 48%, #24DCC9 100%) !important;
+    box-shadow: 0 12px 20px rgba(36, 220, 201, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
   }
 
   .header-next-name {
@@ -5556,7 +5556,7 @@ input {
   border-color: rgba(255, 255, 255, 0.36) !important;
   color: #fff !important;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
-  box-shadow: 0 22px 38px rgba(185, 122, 9, 0.3) !important;
+  box-shadow: 0 22px 38px rgba(36, 220, 201, 0.3) !important;
 }
 
 .daily-prayer-card.active .daily-prayer-card-head span,
@@ -5602,7 +5602,7 @@ input {
     width: 100%;
     min-height: auto;
     padding: 6px 10px;
-    border: 1px solid rgba(215, 157, 37, 0.2);
+    border: 1px solid rgba(36, 220, 201, 0.2);
     border-radius: 10px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 242, 0.82));
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
@@ -5718,7 +5718,7 @@ input {
     gap: 4px;
     min-width: 300px;
     padding: 8px 18px;
-    border: 1px solid rgba(215, 157, 37, 0.18);
+    border: 1px solid rgba(36, 220, 201, 0.18);
     border-radius: 12px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 242, 0.78));
     box-shadow: 0 12px 28px rgba(24, 21, 15, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.96);
@@ -5778,7 +5778,7 @@ input {
 /* Theme-matched header date colors */
 @media (min-width: 981px) {
   .header-date-widget {
-    border-color: rgba(215, 157, 37, 0.24) !important;
+    border-color: rgba(36, 220, 201, 0.24) !important;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(248, 244, 237, 0.9)) !important;
     box-shadow: 0 12px 28px rgba(24, 21, 15, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
   }
@@ -5818,7 +5818,7 @@ input {
   border-radius: 10px;
   color: #fff;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  box-shadow: 0 10px 18px rgba(185, 122, 9, 0.2);
+  box-shadow: 0 10px 18px rgba(36, 220, 201, 0.2);
   font: var(--fa-font-regular);
   font-size: 15px;
 }
@@ -5826,7 +5826,7 @@ input {
 .daily-prayers .daily-prayers-head p {
   margin: 0;
   padding: 8px 14px;
-  border-color: rgba(215, 157, 37, 0.2);
+  border-color: rgba(36, 220, 201, 0.2);
   color: #6f665b;
   background: rgba(255, 255, 255, 0.82);
   font-size: 13px;
@@ -6015,4 +6015,145 @@ input {
     object-position: center center !important;
     transform: none !important;
   }
+}
+
+/* Turquoise theme override */
+:root {
+  --gold: #24DCC9;
+  --gold-dark: #24DCC9;
+  --accent-teal: #24DCC9;
+  --accent-teal-rgb: 36, 220, 201;
+}
+
+.gold-btn,
+.donate-pill,
+.footer-btn,
+.newsletter-box button,
+.daily-prayers .daily-prayers-head h2::before,
+.prayer-time-item.active,
+.prayer-table-column.active,
+.daily-prayer-card.active,
+.daily-prayer-card.active:hover,
+.daily-prayer-card.active:focus-within,
+.header-next-prayer,
+.main-menu a.active,
+.main-menu a:hover,
+.mobile-menu-panel .main-menu a.active,
+.mobile-menu-panel .main-menu a:hover,
+.dropdown-menu a:hover,
+.has-dropdown:hover > a,
+.has-dropdown:focus-within > a,
+.socials a:hover,
+.footer-socials a:hover,
+.call:hover i,
+.contact-detail-list a:hover i,
+.back-to-top,
+.slider-btn:hover,
+.amount-grid button:hover,
+.amount-grid button.selected {
+  color: #000 !important;
+  background: #24DCC9 !important;
+  border-color: #24DCC9 !important;
+  box-shadow: 0 12px 24px rgba(36, 220, 201, 0.26) !important;
+}
+
+.gold-btn:hover,
+.donate-pill:hover,
+.outline-btn:hover,
+.footer-btn:hover,
+.footer-btn-light:hover,
+.newsletter-box button:hover,
+.site-footer .footer-btn:hover,
+.site-footer .footer-btn-light:hover,
+.nav-inner > .donate-pill:hover,
+.back-to-top:hover {
+  color: #000 !important;
+  background: #24DCC9 !important;
+  border-color: #24DCC9 !important;
+}
+
+.gold-btn *,
+.gold-btn:hover *,
+.donate-pill *,
+.donate-pill:hover *,
+.footer-btn *,
+.footer-btn:hover *,
+.newsletter-box button *,
+.newsletter-box button:hover *,
+.daily-prayers .daily-prayers-head h2::before,
+.prayer-time-item.active *,
+.prayer-table-column.active *,
+.daily-prayer-card.active *,
+.daily-prayer-card.active:hover *,
+.daily-prayer-card.active:focus-within *,
+.header-next-prayer *,
+.main-menu a.active *,
+.main-menu a:hover *,
+.mobile-menu-panel .main-menu a.active *,
+.mobile-menu-panel .main-menu a:hover *,
+.dropdown-menu a:hover *,
+.has-dropdown:hover > a *,
+.has-dropdown:focus-within > a *,
+.socials a:hover *,
+.footer-socials a:hover *,
+.call:hover i,
+.contact-detail-list a:hover i,
+.back-to-top *,
+.slider-btn:hover *,
+.amount-grid button:hover *,
+.amount-grid button.selected * {
+  color: #000 !important;
+}
+
+.outline-btn:hover,
+.footer-btn-light:hover {
+  color: #000 !important;
+}
+
+.amount-grid button:hover,
+.amount-grid button.selected {
+  color: #000 !important;
+}
+
+.event-item time span,
+.footer-links h3::after,
+.site-header::before,
+.main-menu a.active::after,
+.nav-inner .main-menu a.active::after,
+.daily-prayers .daily-prayers-head p span,
+.header-prayer-widget .prayer-widget-head strong span {
+  background: #24DCC9 !important;
+}
+
+.daily-prayer-card::before,
+.site-header::before,
+.footer-contact-card::before {
+  background: linear-gradient(90deg, transparent, #24DCC9, transparent) !important;
+}
+
+.daily-prayer-card:hover {
+  border-color: rgba(36, 220, 201, 0.42) !important;
+}
+
+.header-date-widget,
+.prayer-card,
+.header-prayer-widget .prayer-widget-head strong,
+.daily-prayers .daily-prayers-head p,
+.event-item:hover time,
+.footer-contact-card,
+.contact-detail-list a:hover,
+.menu-toggle:hover,
+.dropdown-menu a:hover {
+  border-color: rgba(36, 220, 201, 0.34) !important;
+}
+
+.hero-left h1 span,
+.section-title a,
+.services a,
+.prayer-card small,
+.prayer-card a,
+.header-hijri-line,
+.footer-bottom a,
+.site-footer .footer-bottom a:hover {
+  color: #111317 !important;
 }
