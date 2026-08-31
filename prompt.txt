@@ -93,3 +93,6 @@ references prompt 031:
 
 references prompt 032:
     Add new banner image for slider
+
+references prompt 033:
+    update hero section text formatting

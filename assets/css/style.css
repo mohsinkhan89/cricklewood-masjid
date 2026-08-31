@@ -318,7 +318,7 @@ input {
   letter-spacing: 0;
 }
 
-.hero-left h1 span {
+.hero-left h1 b {
   color: var(--gold);
 }
 
@@ -1965,7 +1965,7 @@ time {
   font-weight: 900;
 }
 
-.hero-left h1 span {
+.hero-left h1 b {
   display: inline;
   color: var(--gold);
 }
@@ -2124,7 +2124,7 @@ time {
   text-shadow: 0 2px 14px rgba(255, 255, 255, 0.36);
 }
 
-.hero-left h1 span {
+.hero-left h1 b {
   color: var(--gold);
   text-shadow: 0 2px 12px rgba(255, 255, 255, 0.28);
 }
