@@ -96,3 +96,6 @@ references prompt 032:
 
 references prompt 033:
     update hero section text formatting
+
+references prompt 034:
+    adjust hero section dimensions and text styling
