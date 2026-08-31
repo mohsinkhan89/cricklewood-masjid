@@ -99,3 +99,6 @@ references prompt 033:
 
 references prompt 034:
     adjust hero section dimensions and text styling
+
+references prompt 035:
+    update contact form select styles for better accessibility

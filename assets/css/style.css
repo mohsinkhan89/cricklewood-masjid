@@ -1890,6 +1890,10 @@ time {
 }
 
 @media (max-width: 640px) {
+  .contact-form select {
+    min-height: 48px!important;
+    height: 48px!important;
+  }
   .hero,
   .hero-track,
   .hero-slide {
