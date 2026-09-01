@@ -102,3 +102,6 @@ references prompt 034:
 
 references prompt 035:
     update contact form select styles for better accessibility
+
+references prompt 036:
+    update hero section text and navigation links for clarity and engagement
