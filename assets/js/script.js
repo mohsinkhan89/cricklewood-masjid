@@ -482,11 +482,11 @@ function initFacilitiesSwiper() {
     },
     breakpoints: {
       641: {
-        slidesPerView: 2,
-        spaceBetween: 22
+        slidesPerView: 1,
+        spaceBetween: 14
       },
       981: {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 22
       }
     }
