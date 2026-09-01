@@ -6330,7 +6330,6 @@ input {
   .news-events .events {
     position: sticky;
     top: 132px;
-    max-height: calc(100vh - 154px);
     overflow: auto;
     scrollbar-width: thin;
   }
