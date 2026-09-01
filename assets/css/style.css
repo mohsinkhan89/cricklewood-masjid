@@ -51,7 +51,7 @@ input {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.96);
+  background: white;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
   backdrop-filter: blur(16px);
 }
@@ -736,9 +736,7 @@ time {
 }
 
 .newsletter-box {
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(255, 247, 237, 0.9)),
-    url("../img/pattern.svg") right center / 300px no-repeat;
+  background: white;
 }
 
 .newsletter-box h3 {
@@ -771,9 +769,10 @@ time {
   align-items: center;
   margin-bottom: 24px;
   border-radius: 8px;
-  background:
+  background: white;
+  /* background:
     linear-gradient(90deg, #f2ece4, #fff7ea),
-    url("../img/pattern.svg") right center / 260px no-repeat;
+    url("../img/pattern.svg") right center / 260px no-repeat; */
 }
 
 .visit img {
@@ -2971,9 +2970,7 @@ input {
   padding: 28px 30px 30px !important;
   border-left: 0 !important;
   border-radius: 14px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 248, 237, 0.86)),
-    url("../img/pattern.svg") right -80px top -80px / 280px no-repeat;
+  background: white;
   box-shadow: 0 16px 42px rgba(24, 21, 15, 0.1);
   border: 1px solid rgba(36, 220, 201, 0.14);
 }
@@ -3744,7 +3741,7 @@ input {
   padding: 28px;
   border: 1px solid rgba(36, 220, 201, 0.16);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
   box-shadow: 0 18px 42px rgba(24, 21, 15, 0.11);
   backdrop-filter: blur(12px);
 }
