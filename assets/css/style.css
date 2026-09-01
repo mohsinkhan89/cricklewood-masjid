@@ -2550,8 +2550,8 @@ time {
 
 /* Modern header UI */
 .site-header {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 241, 0.96));
+  /* background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 241, 0.96)); */
   border-bottom: 1px solid rgba(36, 220, 201, 0.18);
   box-shadow: 0 12px 30px rgba(31, 26, 17, 0.08);
 }
@@ -3053,7 +3053,7 @@ input {
   border: 0;
   border-radius: 11px;
   background: #fff;
-  box-shadow: 0 10px 18px rgba(183, 122, 9, 0.14);
+  box-shadow: 0 10px 18px rgba(8, 7, 7, 0.14);
 }
 
 .event-item time span {
@@ -3095,7 +3095,7 @@ input {
   padding: 6px 9px !important;
   border-radius: 8px;
   color: #655b50;
-  background: rgba(245, 238, 226, 0.86);
+  background: #eee;
   font-size: 12px;
   font-weight: 700;
 }
@@ -3181,14 +3181,11 @@ input {
   margin-bottom: 24px;
   border: 1px solid rgba(36, 220, 201, 0.12);
   border-radius: 8px !important;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.94), rgba(255, 247, 235, 0.92)),
-    url("../img/pattern.svg") right 18px center / 170px no-repeat !important;
   box-shadow: 0 10px 26px rgba(24, 21, 15, 0.08);
 }
 
 .visit::before {
-  background: #fffbf5;
+  background: white;
   content: "";
   position: absolute;
   left: 43%;
@@ -3613,10 +3610,7 @@ input {
   overflow: hidden;
   margin-top: 24px;
   padding: 56px 0 58px;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 235, 0.9)),
-    url("../img/pattern.svg") left -90px top -120px / 360px no-repeat,
-    #fff8ec;
+  background: #eee;
   border-top: 1px solid rgba(36, 220, 201, 0.14);
 }
 
@@ -3711,7 +3705,6 @@ input {
   border-radius: 8px;
   /* color: #fff; */
   background: linear-gradient(135deg, #24DCC9, #24DCC9);
-  box-shadow: 0 10px 18px rgba(183, 122, 9, 0.18);
 }
 
 .contact-detail-list small,
@@ -3742,8 +3735,6 @@ input {
   border: 1px solid rgba(36, 220, 201, 0.16);
   border-radius: 8px;
   background: white;
-  box-shadow: 0 18px 42px rgba(24, 21, 15, 0.11);
-  backdrop-filter: blur(12px);
 }
 
 .form-row {
@@ -4691,7 +4682,7 @@ input {
   position: relative;
   padding: 42px 0 46px;
   overflow: hidden;
-  background: linear-gradient(180deg, #fffaf1 0%, #fff 100%);
+  background: #eee;
   border-bottom: 1px solid rgba(36, 220, 201, 0.12);
 }
 
@@ -4845,7 +4836,7 @@ input {
 }
 
 .sunrise-card {
-  background: rgba(255, 250, 242, 0.9);
+  background: white;
 }
 
 .daily-prayer-times.single {
@@ -5746,8 +5737,9 @@ input {
     padding: 8px 18px;
     border: 1px solid rgba(36, 220, 201, 0.18);
     border-radius: 12px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 242, 0.78));
-    box-shadow: 0 12px 28px rgba(24, 21, 15, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+    background: white;
+    /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 242, 0.78));
+    box-shadow: 0 12px 28px rgba(24, 21, 15, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.96); */
     text-align: center;
   }
 
@@ -5805,8 +5797,9 @@ input {
 @media (min-width: 981px) {
   .header-date-widget {
     border-color: rgba(36, 220, 201, 0.24) !important;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(248, 244, 237, 0.9)) !important;
-    box-shadow: 0 12px 28px rgba(24, 21, 15, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(248, 244, 237, 0.9)) !important; */
+    background: white !important;
+    /* box-shadow: 0 12px 28px rgba(24, 21, 15, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important; */
   }
 
   .header-date-widget .header-date-line {
