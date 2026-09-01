@@ -336,18 +336,7 @@ function renderDailyPrayerSection(row, dateLabel, activeKey) {
       `;
     }).join("");
 
-    target.innerHTML = `
-      ${cards}
-      <article class="daily-prayer-card sunrise-card" style="--prayer-delay: ${PRAYER_DISPLAY.length * 70}ms">
-        <div class="daily-prayer-card-head">
-          <span>Sunrise</span>
-          <h3>Sunrise</h3>
-        </div>
-        <div class="daily-prayer-times single">
-          <div><span>Time</span><strong>${getPrayerTime(row, "sunrise")}</strong></div>
-        </div>
-      </article>
-    `;
+    target.innerHTML = cards;
   });
 }
 
