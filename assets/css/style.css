@@ -6464,3 +6464,37 @@ input {
     animation: none;
   }
 }
+/* Real logo image */
+.brand-logo {
+  width: 200px;
+  height: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.04);
+  filter: drop-shadow(0 8px 16px rgba(36, 220, 201, 0.22));
+}
+
+.footer-brand .brand-logo {
+  width: 250px;
+  height: auto;
+}
+
+@media (max-width: 980px) {
+  .mobile-brand .brand-logo,
+  .sidebar-brand .brand-logo {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-brand .brand-logo,
+  .sidebar-brand .brand-logo {
+    width: 42px !important;
+    height: 42px !important;
+  }
+}
