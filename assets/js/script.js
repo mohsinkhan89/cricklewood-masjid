@@ -460,6 +460,39 @@ function enableParentLordIconHover() {
   });
 }
 
+
+function initFacilitiesSwiper() {
+  const slider = document.querySelector("[data-facilities-swiper]");
+  if (!slider || typeof Swiper === "undefined") return;
+
+  new Swiper(slider, {
+    slidesPerView: 1,
+    spaceBetween: 14,
+    loop: true,
+    speed: 650,
+    grabCursor: true,
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    pagination: {
+      el: slider.querySelector(".facilities-pagination"),
+      clickable: true
+    },
+    breakpoints: {
+      641: {
+        slidesPerView: 2,
+        spaceBetween: 22
+      },
+      981: {
+        slidesPerView: 3,
+        spaceBetween: 22
+      }
+    }
+  });
+}
+initFacilitiesSwiper();
 enableParentLordIconHover();
 
 const header = document.querySelector(".site-header");
