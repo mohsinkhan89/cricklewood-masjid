@@ -6259,7 +6259,9 @@ input {
 }
 
 .socials a:hover *,
-.socials a:hover,
+.socials a:hover {
+  color: black !important;
+}
 .footer-socials a:hover *,
 .footer-socials a:hover {
   color: var(--gold) !important;
